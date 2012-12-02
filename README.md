@@ -1,2 +1,2 @@
-srsc300
+srsc300 SOURCE
 =======

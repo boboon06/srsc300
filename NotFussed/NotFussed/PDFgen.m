@@ -15,7 +15,7 @@
 {
     NSLog(@"PDF TEXT: %@", text);
     NSString *pdfFile = NSHomeDirectory();
-    pdfFile = [pdfFile stringByAppendingString:@"/Documents/pdf.pdf"];
+    pdfFile = [pdfFile stringByAppendingString:@"/Documents/pdf_gen_out.pdf"];
     NSLog(@"PDF PATH: %@", pdfFile);
     // Prepare the text using a Core Text Framesetter.
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)[text copy], NULL);

@@ -80,7 +80,7 @@
     
     // Attach an image to the email
     NSData *myData = [NSData dataWithContentsOfFile:attachments];
-    [picker addAttachmentData:myData mimeType:@"application/pdf" fileName:@"results.pdf"];
+    [picker addAttachmentData:myData mimeType:@"application/pdf" fileName:@"diploma.pdf"];
     
     // Fill out the email body text
     NSString *emailBody = @"Hey look what I finished!\n\nHurry up and mark this shit!";

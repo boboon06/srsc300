@@ -13,10 +13,11 @@
 
 
 @interface PDFgen : NSObject
-@property (nonatomic) int lastheight;
+@property (nonatomic) int headeroffset;
 
 - (NSString*) createPDFname:(NSString*)name pet:(NSString*)text;
 - (CFRange)renderPage:(NSInteger)pageNum withTextRange:(CFRange)currentRange andFramesetter:(CTFramesetterRef)framesetter;
--(void)drawHeader;
-- (void) drawText:(NSString*)textToDraw font:(UIFont*)font offset:(int)offset;
+-(void)drawHeader:(CGRect)pageSize;
+- (void) drawBorder:(CGRect)area width:(int)width offset:(int)offset;
+- (CGSize) drawText:(NSString*)textToDraw font:(UIFont*)font x:(int)x y:(int)y width:(int)width;
 @end

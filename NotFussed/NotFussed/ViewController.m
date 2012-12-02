@@ -35,7 +35,7 @@
 // EMAIL RELATED CODE.
 // HOW TO CALL THE EMAIL AND PDF CALLER?
 // id gen = [PDFgen new];
-// NSString PDFPATH = [gen createPDFname:<name> [Question data]]
+// NSString PDFPATH = [gen createPDFname:<name> [OTHER data]]
 
 // All this depends on how we implement storing data, I'll rather have to just need to use [gen createPDF] and pull from a Keyvalue Store.
 

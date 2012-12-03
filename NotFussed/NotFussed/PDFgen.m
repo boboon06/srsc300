@@ -14,8 +14,8 @@
 - (NSString*)createPDFname: (NSString*)name pet:(NSString*)text
 {
     NSLog(@"PDF TEXT: %@", text);
-    NSString *pdfFile = NSHomeDirectory();
-    pdfFile = [pdfFile stringByAppendingString:@"/Documents/pdf_gen_out.pdf"];
+    NSString *home = NSHomeDirectory();
+    NSString *pdfFile = [home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"];
     NSLog(@"PDF PATH: %@", pdfFile);
     // Prepare the text using a Core Text Framesetter.
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)[text copy], NULL);
@@ -37,17 +37,18 @@
                 CGRect visible = CGRectMake(72,72, pagesize.size.width-144, pagesize.size.height-144);
                 // Draw a page number at the bottom of each page.
                 currentPage++;
-                [self drawBorder:visible width:2 offset:10];
+                [self drawBorder:visible width:2 offset:20];
                 [self drawHeader:visible];
                 CGSize last;
                 last = [self drawText:[name stringByAppendingString:@" has completed a course in No School Academy."] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width];
                 CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width];
-                last = [self drawText:[@"Admires:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:0 y:2*title.height width:(visible.size.width/3)-10];
-                last = [self drawText:@"Respects:\n * Curiosity\n * Good Tasty Heart" font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
-                last = [self drawText:@"And is going to:\nAnd I have no idea where this data would come from!\nIsn't it wonderful!" font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
+                last = [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:2*title.height width:(visible.size.width/3)-10];
+                [self drawImage:[home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10];
+                last = [self drawText:@"Respects:\n * Curiosity (Because a Rover that weighs the same as SUV makes people respect you.)\n * A Good Tasty Heart" font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
+                last = [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
+                [self drawTimestamp];
                     done = YES;
             } while (!done);
-            
             // Close the PDF context and write the contents out.
             UIGraphicsEndPDFContext();
             
@@ -165,6 +166,38 @@
     NSLog(@"DREW TEXT: X:%d Y:%d Width:%f Height:%f", x, y, stringSize.width, stringSize.height);
     return stringSize;
     
+}
+- (CGRect) drawImage:(NSString*)path x:(int)x y:(int)y width:(int)width
+{
+    UIImage * Image = [UIImage imageWithData:[NSData dataWithContentsOfFile:path]];
+    CGFloat scale = width/Image.size.width;
+    
+    CGRect imageSize = CGRectMake(72 + x, 72 + headeroffset + y, width, Image.size.height*scale);
+    
+    UIImage *draw = [UIImage imageWithCGImage:[Image CGImage] scale:scale orientation:UIImageOrientationUp];
+    [draw drawInRect:imageSize];
+    // Do stuff to render an image
+    return imageSize;
+}
+
+-(void) drawTimestamp
+{
+    NSString *dt;
+	NSDate *now = [NSDate date];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"dd-MM-yyyy' 'HH:mm:ss"];
+	dt = [dateFormatter stringFromDate:now];
+    NSString *stamp = @"Generated ";
+    stamp = [stamp stringByAppendingString:dt];
+    CGSize stringSize = [stamp sizeWithFont:[UIFont systemFontOfSize:7.0]
+                               constrainedToSize:CGSizeMake(792, 324)
+                                   lineBreakMode:NSLineBreakByWordWrapping];
+    CGRect renderingRect = CGRectMake(792-stringSize.width, 612-stringSize.height, 792, stringSize.height);
+    
+    [stamp drawInRect:renderingRect
+                  withFont:[UIFont systemFontOfSize:7.0]
+             lineBreakMode:NSLineBreakByWordWrapping
+                 alignment:NSTextAlignmentLeft];
 }
 
 @end

@@ -98,20 +98,22 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            message.text = @"Result: canceled";
+            NSLog(@"MAIL Result: Canceled. Not Saved as Draft");
             break;
         case MFMailComposeResultSaved:
-            message.text = @"Result: saved";
+            NSLog(@"MAIL Result: Canceled. Saved as Draft");
             break;
         case MFMailComposeResultSent:
-            message.text = @"Result: sent";
+            NSLog(@"MAIL Result: sent");
             popup(@"Success!", @"You message has been sent!");
             break;
         case MFMailComposeResultFailed:
-            message.text = @"Result: failed";
+            popup(@"I just don't know what went wrong!", @"Something went wrong. Derpy Hooves is sorry."); // Mail Delivery Agent probibly broke.
+            NSLog(@"MAIL Result: Complete Failure");
             break;
         default:
-            message.text = @"Result: not sent";
+            popup(@"Success!", @"You message has been queued!");
+            NSLog(@"MAIL Result: Delivery Pending/");
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];

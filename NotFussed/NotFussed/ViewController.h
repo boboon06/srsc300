@@ -15,12 +15,10 @@
 
 
 // EMAILING CODE CAN NOT BE REMOVED FROM THIS WINDOW DUE TO SOME FUCKED UP VIEW CONTROLER ISSUE
-
-@property (nonatomic, retain) IBOutlet UILabel *message;
 @property (nonatomic, retain) NSString *attachments;
 
 -(void)showPicker;
 -(void)displayComposerSheet;
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error;
-
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end

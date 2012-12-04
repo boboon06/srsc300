@@ -13,7 +13,6 @@
 @end
 
 @implementation ViewController
-@synthesize message; // EMAIL Message
 @synthesize attachments; // EMAIL ATTACHMENTS
 
 - (void)viewDidLoad
@@ -41,7 +40,7 @@
 
 -(void)showPicker
 {
-    
+    UIAlertView *message = [UIAlertView alloc];
     Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
     if (mailClass != nil)
     {
@@ -52,12 +51,22 @@
         }
         else
         {
-            exit(EXIT_FAILURE);
+            message = [message initWithTitle:@"Sorry"
+                                     message:@"Your device hasn't been set up to send emails."
+                                    delegate:self
+                           cancelButtonTitle:@"OK"
+                           otherButtonTitles:nil];
+            [message show];
         }
     }
     else
     {
-        exit(EXIT_FAILURE);
+        message = [message initWithTitle:@"Sorry"
+                                 message:@"Your device doesn't support sending emails in-app."
+                                delegate:self
+                       cancelButtonTitle:@"OK"
+                       otherButtonTitles:nil];
+        [message show];
     }
 }
 
@@ -72,18 +81,22 @@
     // Set up recipients
     NSArray *toRecipients = [NSArray arrayWithObject:@"jsh23@students.waikato.ac.nz"];
     //NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil];
-    //NSArray *bccRecipients = [NSArray arrayWithObject:@"fourth@example.com"];
+    //NSArray *bccRecipients = [NSArray arrayWithObject:@"videos@theboboon.com"];
     
     [picker setToRecipients:toRecipients];
     //[picker setCcRecipients:ccRecipients];
     //[picker setBccRecipients:bccRecipients];
     
     // Attach an image to the email
-    NSData *myData = [NSData dataWithContentsOfFile:attachments];
-    [picker addAttachmentData:myData mimeType:@"application/pdf" fileName:@"diploma.pdf"];
+    //NSString *home = NSHomeDirectory(); Unused ATM.
+    /* Use theses to attach files.
+    attach([home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"], @"image/png", [name.text stringByAppendingString:@" Role Model.png"], picker);
+    attach([home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"], @"application/pdf", [name.text stringByAppendingString:@"'s Diploma.pdf"], picker);
+    */
+    
     
     // Fill out the email body text
-    NSString *emailBody = @"Hey look what I finished!\n\nHurry up and mark this shit!";
+    NSString *emailBody = @"OHMYGERD I've finished it!\nFinaly!";
     [picker setMessageBody:emailBody isHTML:NO];
     
     [self presentViewController:picker animated:YES completion:nil];
@@ -93,7 +106,6 @@
 // Dismisses the email composition interface when users tap Cancel or Send. Proceeds to update the message field with the result of the operation.
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
-    message.hidden = NO;
     // Notifies users about errors associated with the interface
     switch (result)
     {
@@ -105,21 +117,19 @@
             break;
         case MFMailComposeResultSent:
             NSLog(@"MAIL Result: sent");
-            popup(@"Success!", @"You message has been sent!");
+            popup(@"Success!", @"Your message has been sent!");
             break;
         case MFMailComposeResultFailed:
-            popup(@"I just don't know what went wrong!", @"Something went wrong. Derpy Hooves is sorry."); // Mail Delivery Agent probibly broke.
+            popup(@"I just don't know what went wrong!", @"Something went wrong. Derpy Hooves is sorry."); // Mail Agent probibly broke.
             NSLog(@"MAIL Result: Complete Failure");
             break;
         default:
-            popup(@"Success!", @"You message has been queued!");
+            popup(@"Success!", @"Your message has been queued!");
             NSLog(@"MAIL Result: Delivery Pending/");
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 void popup(NSString* title, NSString* body)
 {
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:title
@@ -129,6 +139,16 @@ void popup(NSString* title, NSString* body)
                                             otherButtonTitles:nil];
     [message show];
 }
-
-
+void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewController *picker)
+{
+    NSData *myData = [NSData dataWithContentsOfFile:path];
+    [picker addAttachmentData:myData mimeType:MIME fileName:name];
+}
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        exit(EXIT_FAILURE);
+    }
+}
 @end

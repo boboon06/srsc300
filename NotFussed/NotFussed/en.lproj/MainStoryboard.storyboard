@@ -4,23 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--MAILER FORM-->
-        <scene sceneID="TxD-Hk-oC0">
-            <objects>
-                <viewController storyboardIdentifier="mailer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QnO-ui-m08" userLabel="MAILER FORM" customClass="MFMessageComposeViewController" colorLabel="IBBuiltInLabel-Red" propertyAccessControl="all" sceneMemberID="viewController">
-                    <attributedString key="userComments">
-                        <fragment content="DON'T REMOVE">
-                            <attributes>
-                                <font key="NSFont" metaFont="toolTip"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k9H-Wk-Chc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-595" y="92"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="4">
             <objects>
@@ -36,9 +19,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="MFMessageComposeViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MFMessageComposeViewController.h"/>
-        </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
         </class>

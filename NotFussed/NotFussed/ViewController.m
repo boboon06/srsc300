@@ -47,12 +47,14 @@
         // We must always check whether the current device is configured for sending emails
         if ([mailClass canSendMail])
         {
+            // It is so we can display the email code.
             [self displayComposerSheet];
         }
         else
         {
+            // The device hasn't been set up. So tell the user to get it set up.
             message = [message initWithTitle:@"Sorry"
-                                     message:@"Your device hasn't been set up to send emails."
+                                     message:@"Your device hasn't been set up to send emails. Please contact your System Administrator."
                                     delegate:self
                            cancelButtonTitle:@"OK"
                            otherButtonTitles:nil];
@@ -61,8 +63,9 @@
     }
     else
     {
+        // The device doesn't support sending emails. Needs to be updated above iOS 3.0. The Base version should make the device fail to install it.
         message = [message initWithTitle:@"Sorry"
-                                 message:@"Your device doesn't support sending emails in-app."
+                                 message:@"Your device doesn't support sending emails. Please contact your System Administrator."
                                 delegate:self
                        cancelButtonTitle:@"OK"
                        otherButtonTitles:nil];
@@ -110,22 +113,22 @@
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            NSLog(@"MAIL Result: Canceled. Not Saved as Draft");
+            NSLog(@"MAIL Result: Canceled. Not Saved as Draft.");
             break;
         case MFMailComposeResultSaved:
-            NSLog(@"MAIL Result: Canceled. Saved as Draft");
+            NSLog(@"MAIL Result: Canceled. Saved as Draft.");
             break;
         case MFMailComposeResultSent:
-            NSLog(@"MAIL Result: sent");
+            NSLog(@"MAIL Result: sent.");
             popup(@"Success!", @"Your message has been sent!");
             break;
         case MFMailComposeResultFailed:
-            popup(@"I just don't know what went wrong!", @"Something went wrong. Derpy Hooves is sorry."); // Mail Agent probibly broke.
-            NSLog(@"MAIL Result: Complete Failure");
+            popup(@"I just don't know what went wrong!", @"Something went horribly wrong, and it's an undocumentated error. Derpy Hooves is sorry."); // Mail Agent probibly broke.
+            NSLog(@"MAIL Result: Complete Failure.");
             break;
         default:
             popup(@"Success!", @"Your message has been queued!");
-            NSLog(@"MAIL Result: Delivery Pending/");
+            NSLog(@"MAIL Result: Delivery Pending.");
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];

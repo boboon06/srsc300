@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK6-JN-BCB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="7IF-qB-cyh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="2" eventType="touchUpInside" id="3gr-Ik-cVl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6r-SS-F0s">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="2" eventType="touchUpInside" id="xZN-Sh-KaO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-ty-56y">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="MV9-v5-maR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="2" eventType="touchUpInside" id="kfd-kv-ETm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCE-Et-eqJ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="2" eventType="touchUpInside" id="v1d-2C-4G9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-FA-uyN">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="Dgx-TM-fE5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="2" eventType="touchUpInside" id="ytI-CZ-lYC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8C-1a-URL">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="2" eventType="touchUpInside" id="Pks-tg-xah"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsY-Kz-J4m">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="foO-au-dwl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="2" eventType="touchUpInside" id="mja-sP-fPr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-iG-u1e">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="2" eventType="touchUpInside" id="yqb-BD-pUC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi0-Sr-79e">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="SwX-rJ-Sx7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="2" eventType="touchUpInside" id="keP-vO-fj5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWk-rK-rmW">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="2" eventType="touchUpInside" id="0aT-zu-Ubw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc3-Ka-D4m">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startCamera:" destination="2" eventType="touchUpInside" id="nCs-BT-2WZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSB-59-apM">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Video">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="2" eventType="touchUpInside" id="Ffl-WF-QNo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xi0-Sr-79e" firstAttribute="leading" secondItem="AWk-rK-rmW" secondAttribute="leading" type="default" id="0dJ-IA-bW2"/>
+                            <constraint firstItem="xi0-Sr-79e" firstAttribute="leading" secondItem="XsY-Kz-J4m" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="2ry-bu-gi4"/>
+                            <constraint firstItem="TEg-iG-u1e" firstAttribute="leading" secondItem="s8C-1a-URL" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="54z-Me-Ex3"/>
+                            <constraint firstItem="UCE-Et-eqJ" firstAttribute="leading" secondItem="Beo-ty-56y" secondAttribute="leading" type="default" id="94N-Q1-ZmQ"/>
+                            <constraint firstItem="XsY-Kz-J4m" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="A2c-en-pvN"/>
+                            <constraint firstItem="nSB-59-apM" firstAttribute="top" secondItem="Nc3-Ka-D4m" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="D1N-q1-Rec"/>
+                            <constraint firstItem="s8C-1a-URL" firstAttribute="leading" secondItem="UCE-Et-eqJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="DnP-TL-4av"/>
+                            <constraint firstItem="r6r-SS-F0s" firstAttribute="baseline" secondItem="UCE-Et-eqJ" secondAttribute="baseline" type="default" id="Fkg-vX-Ph7"/>
+                            <constraint firstItem="Nc3-Ka-D4m" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ham-SW-P5S"/>
+                            <constraint firstItem="xi0-Sr-79e" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Hji-B9-7Gd"/>
+                            <constraint firstItem="AWk-rK-rmW" firstAttribute="baseline" secondItem="TEg-iG-u1e" secondAttribute="baseline" type="default" id="JMk-WP-UTJ"/>
+                            <constraint firstItem="UCE-Et-eqJ" firstAttribute="leading" secondItem="r6r-SS-F0s" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Lmg-mt-Jhm"/>
+                            <constraint firstItem="AWk-rK-rmW" firstAttribute="trailing" secondItem="xi0-Sr-79e" secondAttribute="trailing" type="default" id="NTa-T4-Lqy"/>
+                            <constraint firstItem="TEg-iG-u1e" firstAttribute="baseline" secondItem="s8C-1a-URL" secondAttribute="baseline" type="default" id="PRT-nw-GgK"/>
+                            <constraint firstItem="s8C-1a-URL" firstAttribute="leading" secondItem="wtb-FA-uyN" secondAttribute="leading" type="default" id="PhK-Al-vTg"/>
+                            <constraint firstItem="nSB-59-apM" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Rhf-Je-hf0"/>
+                            <constraint firstItem="nSB-59-apM" firstAttribute="trailing" secondItem="Nc3-Ka-D4m" secondAttribute="trailing" type="default" id="Whs-KK-ewA"/>
+                            <constraint firstItem="Nc3-Ka-D4m" firstAttribute="top" secondItem="r6r-SS-F0s" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XXA-ko-8eB"/>
+                            <constraint firstItem="wtb-FA-uyN" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Xpu-PN-8x8"/>
+                            <constraint firstItem="r6r-SS-F0s" firstAttribute="top" secondItem="iK6-JN-BCB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XxU-Ro-job"/>
+                            <constraint firstItem="iK6-JN-BCB" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aWk-r9-SdQ"/>
+                            <constraint firstItem="iK6-JN-BCB" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="bvg-EY-W1W"/>
+                            <constraint firstItem="s8C-1a-URL" firstAttribute="baseline" secondItem="UCE-Et-eqJ" secondAttribute="baseline" type="default" id="g2O-T5-00L"/>
+                            <constraint firstItem="Nc3-Ka-D4m" firstAttribute="trailing" secondItem="r6r-SS-F0s" secondAttribute="trailing" type="default" id="gRd-LU-jco"/>
+                            <constraint firstItem="wtb-FA-uyN" firstAttribute="leading" secondItem="Beo-ty-56y" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="gZD-35-pZU"/>
+                            <constraint firstItem="XsY-Kz-J4m" firstAttribute="leading" secondItem="TEg-iG-u1e" secondAttribute="leading" type="default" id="imk-lT-aMn"/>
+                            <constraint firstItem="Beo-ty-56y" firstAttribute="leading" secondItem="iK6-JN-BCB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lWr-bX-rRG"/>
+                            <constraint firstItem="Beo-ty-56y" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="rvb-fd-6VM"/>
+                            <constraint firstItem="XsY-Kz-J4m" firstAttribute="leading" secondItem="wtb-FA-uyN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tH8-ry-nxz"/>
+                            <constraint firstItem="AWk-rK-rmW" firstAttribute="leading" secondItem="TEg-iG-u1e" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="uRR-iB-6FW"/>
+                            <constraint firstItem="r6r-SS-F0s" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yfv-N5-8mV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startCamera:"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

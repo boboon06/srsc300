@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D967E297166E9C98003BEDAA /* dummy-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = D967E296166E9C98003BEDAA /* dummy-avatar.png */; };
+		D9734212166D7C5200375746 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734211166D7C5200375746 /* UIKit.framework */; };
+		D9734214166D7C5200375746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734213166D7C5200375746 /* Foundation.framework */; };
+		D9734216166D7C5200375746 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734215166D7C5200375746 /* CoreGraphics.framework */; };
+		D973421C166D7C5200375746 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D973421A166D7C5200375746 /* InfoPlist.strings */; };
+		D973421E166D7C5200375746 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D973421D166D7C5200375746 /* main.m */; };
+		D9734222166D7C5200375746 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9734221166D7C5200375746 /* AppDelegate.m */; };
+		D9734224166D7C5200375746 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D9734223166D7C5200375746 /* Default.png */; };
+		D9734226166D7C5200375746 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9734225166D7C5200375746 /* Default@2x.png */; };
+		D9734228166D7C5200375746 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9734227166D7C5200375746 /* Default-568h@2x.png */; };
+		D973422B166D7C5200375746 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9734229166D7C5200375746 /* MainStoryboard.storyboard */; };
+		D973422E166D7C5200375746 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D973422D166D7C5200375746 /* ViewController.m */; };
+		D9734236166D7C5200375746 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734235166D7C5200375746 /* SenTestingKit.framework */; };
+		D9734237166D7C5200375746 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734211166D7C5200375746 /* UIKit.framework */; };
+		D9734238166D7C5200375746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734213166D7C5200375746 /* Foundation.framework */; };
+		D9734240166D7C5200375746 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D973423E166D7C5200375746 /* InfoPlist.strings */; };
+		D9734243166D7C5200375746 /* Multi_Avatar_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9734242166D7C5200375746 /* Multi_Avatar_TestTests.m */; };
+		D9734255166D7F7600375746 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734254166D7F7500375746 /* MobileCoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9734239166D7C5200375746 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9734204166D7C5200375746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D973420C166D7C5200375746;
+			remoteInfo = "Multi Avatar Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D967E296166E9C98003BEDAA /* dummy-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dummy-avatar.png"; path = "../../../../Downloads/dummy-avatar.png"; sourceTree = "<group>"; };
+		D973420D166D7C5200375746 /* Multi Avatar Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Avatar Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9734211166D7C5200375746 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D9734213166D7C5200375746 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D9734215166D7C5200375746 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D9734219166D7C5200375746 /* Multi Avatar Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Multi Avatar Test-Info.plist"; sourceTree = "<group>"; };
+		D973421B166D7C5200375746 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D973421D166D7C5200375746 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D973421F166D7C5200375746 /* Multi Avatar Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Multi Avatar Test-Prefix.pch"; sourceTree = "<group>"; };
+		D9734220166D7C5200375746 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D9734221166D7C5200375746 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D9734223166D7C5200375746 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D9734225166D7C5200375746 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D9734227166D7C5200375746 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D973422A166D7C5200375746 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D973422C166D7C5200375746 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D973422D166D7C5200375746 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D9734234166D7C5200375746 /* Multi Avatar TestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multi Avatar TestTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9734235166D7C5200375746 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D973423D166D7C5200375746 /* Multi Avatar TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Multi Avatar TestTests-Info.plist"; sourceTree = "<group>"; };
+		D973423F166D7C5200375746 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9734241166D7C5200375746 /* Multi_Avatar_TestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Multi_Avatar_TestTests.h; sourceTree = "<group>"; };
+		D9734242166D7C5200375746 /* Multi_Avatar_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Multi_Avatar_TestTests.m; sourceTree = "<group>"; };
+		D9734254166D7F7500375746 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D973420A166D7C5200375746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9734255166D7F7600375746 /* MobileCoreServices.framework in Frameworks */,
+				D9734212166D7C5200375746 /* UIKit.framework in Frameworks */,
+				D9734214166D7C5200375746 /* Foundation.framework in Frameworks */,
+				D9734216166D7C5200375746 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9734230166D7C5200375746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9734236166D7C5200375746 /* SenTestingKit.framework in Frameworks */,
+				D9734237166D7C5200375746 /* UIKit.framework in Frameworks */,
+				D9734238166D7C5200375746 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9734202166D7C5200375746 = {
+			isa = PBXGroup;
+			children = (
+				D9734254166D7F7500375746 /* MobileCoreServices.framework */,
+				D9734217166D7C5200375746 /* Multi Avatar Test */,
+				D973423B166D7C5200375746 /* Multi Avatar TestTests */,
+				D9734210166D7C5200375746 /* Frameworks */,
+				D973420E166D7C5200375746 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D973420E166D7C5200375746 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D973420D166D7C5200375746 /* Multi Avatar Test.app */,
+				D9734234166D7C5200375746 /* Multi Avatar TestTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9734210166D7C5200375746 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9734211166D7C5200375746 /* UIKit.framework */,
+				D9734213166D7C5200375746 /* Foundation.framework */,
+				D9734215166D7C5200375746 /* CoreGraphics.framework */,
+				D9734235166D7C5200375746 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9734217166D7C5200375746 /* Multi Avatar Test */ = {
+			isa = PBXGroup;
+			children = (
+				D967E296166E9C98003BEDAA /* dummy-avatar.png */,
+				D9734220166D7C5200375746 /* AppDelegate.h */,
+				D9734221166D7C5200375746 /* AppDelegate.m */,
+				D9734229166D7C5200375746 /* MainStoryboard.storyboard */,
+				D973422C166D7C5200375746 /* ViewController.h */,
+				D973422D166D7C5200375746 /* ViewController.m */,
+				D9734218166D7C5200375746 /* Supporting Files */,
+			);
+			path = "Multi Avatar Test";
+			sourceTree = "<group>";
+		};
+		D9734218166D7C5200375746 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9734219166D7C5200375746 /* Multi Avatar Test-Info.plist */,
+				D973421A166D7C5200375746 /* InfoPlist.strings */,
+				D973421D166D7C5200375746 /* main.m */,
+				D973421F166D7C5200375746 /* Multi Avatar Test-Prefix.pch */,
+				D9734223166D7C5200375746 /* Default.png */,
+				D9734225166D7C5200375746 /* Default@2x.png */,
+				D9734227166D7C5200375746 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D973423B166D7C5200375746 /* Multi Avatar TestTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9734241166D7C5200375746 /* Multi_Avatar_TestTests.h */,
+				D9734242166D7C5200375746 /* Multi_Avatar_TestTests.m */,
+				D973423C166D7C5200375746 /* Supporting Files */,
+			);
+			path = "Multi Avatar TestTests";
+			sourceTree = "<group>";
+		};
+		D973423C166D7C5200375746 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D973423D166D7C5200375746 /* Multi Avatar TestTests-Info.plist */,
+				D973423E166D7C5200375746 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D973420C166D7C5200375746 /* Multi Avatar Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9734246166D7C5200375746 /* Build configuration list for PBXNativeTarget "Multi Avatar Test" */;
+			buildPhases = (
+				D9734209166D7C5200375746 /* Sources */,
+				D973420A166D7C5200375746 /* Frameworks */,
+				D973420B166D7C5200375746 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Multi Avatar Test";
+			productName = "Multi Avatar Test";
+			productReference = D973420D166D7C5200375746 /* Multi Avatar Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9734233166D7C5200375746 /* Multi Avatar TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9734249166D7C5200375746 /* Build configuration list for PBXNativeTarget "Multi Avatar TestTests" */;
+			buildPhases = (
+				D973422F166D7C5200375746 /* Sources */,
+				D9734230166D7C5200375746 /* Frameworks */,
+				D9734231166D7C5200375746 /* Resources */,
+				D9734232166D7C5200375746 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D973423A166D7C5200375746 /* PBXTargetDependency */,
+			);
+			name = "Multi Avatar TestTests";
+			productName = "Multi Avatar TestTests";
+			productReference = D9734234166D7C5200375746 /* Multi Avatar TestTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9734204166D7C5200375746 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "University of Waikato";
+			};
+			buildConfigurationList = D9734207166D7C5200375746 /* Build configuration list for PBXProject "Multi Avatar Test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D9734202166D7C5200375746;
+			productRefGroup = D973420E166D7C5200375746 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D973420C166D7C5200375746 /* Multi Avatar Test */,
+				D9734233166D7C5200375746 /* Multi Avatar TestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D973420B166D7C5200375746 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D973421C166D7C5200375746 /* InfoPlist.strings in Resources */,
+				D9734224166D7C5200375746 /* Default.png in Resources */,
+				D9734226166D7C5200375746 /* Default@2x.png in Resources */,
+				D9734228166D7C5200375746 /* Default-568h@2x.png in Resources */,
+				D973422B166D7C5200375746 /* MainStoryboard.storyboard in Resources */,
+				D967E297166E9C98003BEDAA /* dummy-avatar.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9734231166D7C5200375746 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9734240166D7C5200375746 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D9734232166D7C5200375746 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9734209166D7C5200375746 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D973421E166D7C5200375746 /* main.m in Sources */,
+				D9734222166D7C5200375746 /* AppDelegate.m in Sources */,
+				D973422E166D7C5200375746 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D973422F166D7C5200375746 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9734243166D7C5200375746 /* Multi_Avatar_TestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D973423A166D7C5200375746 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D973420C166D7C5200375746 /* Multi Avatar Test */;
+			targetProxy = D9734239166D7C5200375746 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D973421A166D7C5200375746 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D973421B166D7C5200375746 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D9734229166D7C5200375746 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D973422A166D7C5200375746 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		D973423E166D7C5200375746 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D973423F166D7C5200375746 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D9734244166D7C5200375746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		D9734245166D7C5200375746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9734247166D7C5200375746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Multi Avatar Test/Multi Avatar Test-Prefix.pch";
+				INFOPLIST_FILE = "Multi Avatar Test/Multi Avatar Test-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D9734248166D7C5200375746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Multi Avatar Test/Multi Avatar Test-Prefix.pch";
+				INFOPLIST_FILE = "Multi Avatar Test/Multi Avatar Test-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D973424A166D7C5200375746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Multi Avatar Test.app/Multi Avatar Test";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Multi Avatar Test/Multi Avatar Test-Prefix.pch";
+				INFOPLIST_FILE = "Multi Avatar TestTests/Multi Avatar TestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D973424B166D7C5200375746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Multi Avatar Test.app/Multi Avatar Test";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Multi Avatar Test/Multi Avatar Test-Prefix.pch";
+				INFOPLIST_FILE = "Multi Avatar TestTests/Multi Avatar TestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9734207166D7C5200375746 /* Build configuration list for PBXProject "Multi Avatar Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9734244166D7C5200375746 /* Debug */,
+				D9734245166D7C5200375746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9734246166D7C5200375746 /* Build configuration list for PBXNativeTarget "Multi Avatar Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9734247166D7C5200375746 /* Debug */,
+				D9734248166D7C5200375746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9734249166D7C5200375746 /* Build configuration list for PBXNativeTarget "Multi Avatar TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D973424A166D7C5200375746 /* Debug */,
+				D973424B166D7C5200375746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9734204166D7C5200375746 /* Project object */;
+}

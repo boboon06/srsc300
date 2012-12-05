@@ -48,6 +48,11 @@
     [self startCameraPictureControllerFromViewController:self usingDelegate:self];
 }
 
+- (IBAction)changeThumbnail:(id)sender {
+    UIButton *button = (UIButton*) sender;
+    [_selectedThumbnail setImage:[button imageForState:UIControlStateNormal] forState:UIControlStateNormal];
+}
+
 - (void)restoreImages {
     UIImageView *imageView;
     for (imageView in _imageViews) {
@@ -119,7 +124,8 @@
         // Moving the captured video from temporary storage to persistant storage
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSFileManager *fm = [NSFileManager defaultManager];
-        NSString *move_path =[NSString stringWithFormat:@"%@%@%@%@", [paths objectAtIndex: 0],@"/capturedVideo",_videoID,@".MOV"];
+        NSString *fileName = [NSString stringWithFormat:@"capturedVideo%@",_videoID];
+        NSString *move_path =[NSString stringWithFormat:@"%@/%@%@", [paths objectAtIndex: 0],fileName,@".MOV"];
         NSLog(@"Destination path: %@",move_path);
         NSError *error;
         
@@ -135,15 +141,8 @@
         
         // Remove file the captured video from the temporary storage
         moviePath = [moviePath substringToIndex:[moviePath length] - 17];
-        [fm removeItemAtPath:moviePath error:&error];
+        [self removeFile:fileName :@".MOV"];
         
-        // Checking if file exists
-        NSLog(@"Checking if file exists at path: %@",move_path);
-        if ([fm fileExistsAtPath:move_path]) {
-            NSLog(@"File exist");
-        } else {
-            NSLog(@"File doesn't exist");
-        }
         MPMoviePlayerController *movieObject = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:move_path]];
         // Getting thumbnails from the video
         AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:move_path]];
@@ -152,12 +151,12 @@
         // Getting the points for the thumbnails
         float interval = (float) seconds/_thumbnails.count;
         // Going through the collection to set the thumbnails
-        UIImageView *imageView;
+        UIButton *imageView;
         for (imageView in _thumbnails) {
             NSInteger id = imageView.tag;
             float timePos =interval * id;
             UIImage *thumbnail =[movieObject thumbnailImageAtTime:timePos timeOption:MPMovieTimeOptionNearestKeyFrame];
-            [imageView setImage:thumbnail];
+            [imageView setImage:thumbnail forState:UIControlStateNormal];
         }
     }
     

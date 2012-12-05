@@ -15,5 +15,7 @@
 @property (nonatomic,retain) IBOutletCollection(UIImageView) NSArray *thumbnails;
 @property (nonatomic,strong) NSString *videoID;
 @property (nonatomic,strong) NSString *pictureID;
-@property (nonatomic,retain) IBOutletCollection(UIImageView) NSArray *imageViews;
+@property (nonatomic,retain) IBOutletCollection(UIButton) NSArray *imageViews;
+@property (nonatomic,strong) IBOutlet UIButton *selectedThumbnail;
+-(IBAction)changeThumbnail:(id)sender;
 @end

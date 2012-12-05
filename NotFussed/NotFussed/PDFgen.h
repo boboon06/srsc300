@@ -16,7 +16,6 @@
 @property (nonatomic) int headeroffset;
 
 - (NSString*)createPDFname: (NSString*)name pet:(NSString*)text age:(NSString*)age;
-- (CFRange)renderPage:(NSInteger)pageNum withTextRange:(CFRange)currentRange andFramesetter:(CTFramesetterRef)framesetter;
 -(void)drawHeader:(CGRect)pageSize;
 - (void) drawBorder:(CGRect)area width:(int)width offset:(int)offset;
 - (CGSize) drawText:(NSString*)textToDraw font:(UIFont*)font x:(int)x y:(int)y width:(int)width;

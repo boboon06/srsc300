@@ -1,14 +1,14 @@
 //
-//  NotFussedTests.m
-//  NotFussedTests
+//  PDFGenTests.m
+//  PDFGenTests
 //
-//  Created by jsh23 on 28/11/12.
+//  Created by jsh23 on 29/11/12.
 //  Copyright (c) 2012 The University of Waikato. All rights reserved.
 //
 
-#import "NotFussedTests.h"
+#import "PDFGenTests.h"
 
-@implementation NotFussedTests
+@implementation PDFGenTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in NotFussedTests");
+    STFail(@"Unit tests are not implemented yet in PDFGenTests");
 }
 
 @end

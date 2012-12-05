@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  NotFussed
+//  PDFGen
 //
-//  Created by jsh23 on 28/11/12.
+//  Created by jsh23 on 29/11/12.
 //  Copyright (c) 2012 The University of Waikato. All rights reserved.
 //
 
@@ -12,9 +12,14 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController : UIViewController
+@property (nonatomic, retain) IBOutlet UITextView *text_input;
+@property (nonatomic, retain) IBOutlet UITextField *name;
+@property (nonatomic, retain) IBOutlet UITextField *age;
+@property (nonatomic, retain) IBOutlet UIImageView *rmimagebox;
 
+-(IBAction)text_return:(id)sender;
 
-// EMAILING CODE CAN NOT BE REMOVED FROM THIS WINDOW DUE TO SOME FUCKED UP VIEW CONTROLER ISSUE
+// Mail stuff
 @property (nonatomic, retain) NSString *attachments;
 
 -(void)showPicker;

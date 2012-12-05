@@ -1,13 +1,13 @@
 //
-//  NotFussedTests.h
-//  NotFussedTests
+//  PDFGenTests.h
+//  PDFGenTests
 //
-//  Created by jsh23 on 28/11/12.
+//  Created by jsh23 on 29/11/12.
 //  Copyright (c) 2012 The University of Waikato. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface NotFussedTests : SenTestCase
+@interface PDFGenTests : SenTestCase
 
 @end

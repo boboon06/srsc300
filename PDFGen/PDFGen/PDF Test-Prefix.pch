@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'NotFussed' target in the 'NotFussed' project
+// Prefix header for all source files of the 'PDFGen' target in the 'PDFGen' project
 //
 
 #import <Availability.h>

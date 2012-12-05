@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D967E297166E9C98003BEDAA /* dummy-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = D967E296166E9C98003BEDAA /* dummy-avatar.png */; };
+		D936AA01166ED0FD006BF6B9 /* dummy-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = D936AA00166ED0FD006BF6B9 /* dummy-avatar.png */; };
 		D9734212166D7C5200375746 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734211166D7C5200375746 /* UIKit.framework */; };
 		D9734214166D7C5200375746 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734213166D7C5200375746 /* Foundation.framework */; };
 		D9734216166D7C5200375746 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9734215166D7C5200375746 /* CoreGraphics.framework */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D967E296166E9C98003BEDAA /* dummy-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dummy-avatar.png"; path = "../../../../Downloads/dummy-avatar.png"; sourceTree = "<group>"; };
+		D936AA00166ED0FD006BF6B9 /* dummy-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dummy-avatar.png"; sourceTree = "<group>"; };
 		D973420D166D7C5200375746 /* Multi Avatar Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi Avatar Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9734211166D7C5200375746 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D9734213166D7C5200375746 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,7 +123,7 @@
 		D9734217166D7C5200375746 /* Multi Avatar Test */ = {
 			isa = PBXGroup;
 			children = (
-				D967E296166E9C98003BEDAA /* dummy-avatar.png */,
+				D936AA00166ED0FD006BF6B9 /* dummy-avatar.png */,
 				D9734220166D7C5200375746 /* AppDelegate.h */,
 				D9734221166D7C5200375746 /* AppDelegate.m */,
 				D9734229166D7C5200375746 /* MainStoryboard.storyboard */,
@@ -243,7 +243,7 @@
 				D9734226166D7C5200375746 /* Default@2x.png in Resources */,
 				D9734228166D7C5200375746 /* Default-568h@2x.png in Resources */,
 				D973422B166D7C5200375746 /* MainStoryboard.storyboard in Resources */,
-				D967E297166E9C98003BEDAA /* dummy-avatar.png in Resources */,
+				D936AA01166ED0FD006BF6B9 /* dummy-avatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

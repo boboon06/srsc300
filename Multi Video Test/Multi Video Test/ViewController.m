@@ -14,7 +14,6 @@
 @end
 
 @implementation ViewController
-@synthesize moviePlayer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -103,8 +102,6 @@
     // Getting the sender
     UIButton* btnRecord = (UIButton*) sender;
     // Getting the 'ID' from the button title
-    //NSArray* title = [btnRecord.currentTitle componentsSeparatedByString:@" "];
-    //NSString* ID = [title objectAtIndex:title.count -1];
     NSString* ID =[NSString stringWithFormat:@"%d",btnRecord.tag];
     _videoID = ID;
     NSLog(@"%@",ID);
@@ -114,8 +111,8 @@
     // Creating the player and playing the video
     NSURL *url = [NSURL fileURLWithPath:move_path];
     
-    MPMoviePlayerViewController *amoviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
-    [self presentMoviePlayerViewControllerAnimated:amoviePlayer];
+    MPMoviePlayerViewController *moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+    [self presentMoviePlayerViewControllerAnimated:moviePlayer];
 }
 
 @end

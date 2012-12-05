@@ -26,6 +26,11 @@
 		88ED20AC16683E8700826FEE /* PDFgen.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED20AB16683E8700826FEE /* PDFgen.m */; };
 		88ED20AF16683EA900826FEE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88ED20AE16683EA900826FEE /* MessageUI.framework */; };
 		88ED20B116683EB000826FEE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88ED20B016683EB000826FEE /* CoreText.framework */; };
+		D936AA1C166ED93B006BF6B9 /* cameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D936AA1B166ED93B006BF6B9 /* cameraController.m */; };
+		D936AA1F166ED985006BF6B9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D936AA1E166ED985006BF6B9 /* AVFoundation.framework */; };
+		D936AA21166ED98E006BF6B9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D936AA20166ED98E006BF6B9 /* MediaPlayer.framework */; };
+		D936AA27166ED9AC006BF6B9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D936AA26166ED9AC006BF6B9 /* CoreMedia.framework */; };
+		D936AA29166ED9B5006BF6B9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D936AA28166ED9B5006BF6B9 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,12 @@
 		88ED20AB16683E8700826FEE /* PDFgen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFgen.m; sourceTree = "<group>"; };
 		88ED20AE16683EA900826FEE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		88ED20B016683EB000826FEE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D936AA1A166ED93B006BF6B9 /* cameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraController.h; sourceTree = "<group>"; };
+		D936AA1B166ED93B006BF6B9 /* cameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraController.m; sourceTree = "<group>"; };
+		D936AA1E166ED985006BF6B9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D936AA20166ED98E006BF6B9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D936AA26166ED9AC006BF6B9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D936AA28166ED9B5006BF6B9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D936AA29166ED9B5006BF6B9 /* MobileCoreServices.framework in Frameworks */,
+				D936AA27166ED9AC006BF6B9 /* CoreMedia.framework in Frameworks */,
+				D936AA21166ED98E006BF6B9 /* MediaPlayer.framework in Frameworks */,
+				D936AA1F166ED985006BF6B9 /* AVFoundation.framework in Frameworks */,
 				88ED20B116683EB000826FEE /* CoreText.framework in Frameworks */,
 				88ED20AF16683EA900826FEE /* MessageUI.framework in Frameworks */,
 				880CDA0A16656B680093603E /* UIKit.framework in Frameworks */,
@@ -96,6 +111,10 @@
 		880CD9FA16656B680093603E = {
 			isa = PBXGroup;
 			children = (
+				D936AA28166ED9B5006BF6B9 /* MobileCoreServices.framework */,
+				D936AA26166ED9AC006BF6B9 /* CoreMedia.framework */,
+				D936AA20166ED98E006BF6B9 /* MediaPlayer.framework */,
+				D936AA1E166ED985006BF6B9 /* AVFoundation.framework */,
 				880CDA0F16656B680093603E /* NotFussed */,
 				880CDA3316656B680093603E /* NotFussedTests */,
 				880CDA0816656B680093603E /* Frameworks */,
@@ -135,6 +154,8 @@
 				880CDA2516656B680093603E /* ViewController.m */,
 				88ED20AA16683E8700826FEE /* PDFgen.h */,
 				88ED20AB16683E8700826FEE /* PDFgen.m */,
+				D936AA1A166ED93B006BF6B9 /* cameraController.h */,
+				D936AA1B166ED93B006BF6B9 /* cameraController.m */,
 				880CDA1016656B680093603E /* Supporting Files */,
 			);
 			path = NotFussed;
@@ -287,6 +308,7 @@
 				880CDA1A16656B680093603E /* AppDelegate.m in Sources */,
 				880CDA2616656B680093603E /* ViewController.m in Sources */,
 				88ED20AC16683E8700826FEE /* PDFgen.m in Sources */,
+				D936AA1C166ED93B006BF6B9 /* cameraController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

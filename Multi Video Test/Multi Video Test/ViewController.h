@@ -10,7 +10,6 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> 
-@property (nonatomic,strong) MPMoviePlayerController *moviePlayer;
 @property (nonatomic,strong) NSString *videoID;
 -(IBAction)startCamera:(id)sender;
 @end

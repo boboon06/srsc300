@@ -97,10 +97,6 @@
 		D9E56EB71667FFC000CB0766 = {
 			isa = PBXGroup;
 			children = (
-				D9F2D8CC166EB106001432AD /* CoreMedia.framework */,
-				D9F2D8B1166EA8A1001432AD /* AVFoundation.framework */,
-				D9E56F0816683C6F00CB0766 /* MediaPlayer.framework */,
-				D9E56F011668077E00CB0766 /* MobileCoreServices.framework */,
 				D9E56ECC1667FFC000CB0766 /* Video Test */,
 				D9E56EF01667FFC000CB0766 /* Video TestTests */,
 				D9E56EC51667FFC000CB0766 /* Frameworks */,
@@ -120,6 +116,10 @@
 		D9E56EC51667FFC000CB0766 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9F2D8CC166EB106001432AD /* CoreMedia.framework */,
+				D9F2D8B1166EA8A1001432AD /* AVFoundation.framework */,
+				D9E56F0816683C6F00CB0766 /* MediaPlayer.framework */,
+				D9E56F011668077E00CB0766 /* MobileCoreServices.framework */,
 				D9E56EC61667FFC000CB0766 /* UIKit.framework */,
 				D9E56EC81667FFC000CB0766 /* Foundation.framework */,
 				D9E56ECA1667FFC000CB0766 /* CoreGraphics.framework */,

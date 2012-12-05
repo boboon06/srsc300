@@ -114,8 +114,8 @@
     // Creating the player and playing the video
     NSURL *url = [NSURL fileURLWithPath:move_path];
     
-    moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
-    [self presentMoviePlayerViewControllerAnimated:moviePlayer];
+    MPMoviePlayerViewController *amoviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+    [self presentMoviePlayerViewControllerAnimated:amoviePlayer];
 }
 
 @end

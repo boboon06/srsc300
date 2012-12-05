@@ -93,8 +93,6 @@
 		D9734161166D4A1800375746 = {
 			isa = PBXGroup;
 			children = (
-				D9734200166D537200375746 /* MediaPlayer.framework */,
-				D97341FD166D535700375746 /* MobileCoreServices.framework */,
 				D9734176166D4A1800375746 /* Multi Video Test */,
 				D973419A166D4A1900375746 /* Multi Video TestTests */,
 				D973416F166D4A1800375746 /* Frameworks */,
@@ -114,6 +112,8 @@
 		D973416F166D4A1800375746 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9734200166D537200375746 /* MediaPlayer.framework */,
+				D97341FD166D535700375746 /* MobileCoreServices.framework */,
 				D9734170166D4A1800375746 /* UIKit.framework */,
 				D9734172166D4A1800375746 /* Foundation.framework */,
 				D9734174166D4A1800375746 /* CoreGraphics.framework */,

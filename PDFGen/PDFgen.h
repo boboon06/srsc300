@@ -23,4 +23,5 @@
 - (CGRect) drawImage:(NSString*)path x:(int)x y:(int)y width:(int)width;
 - (void) drawTimestamp;
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
+-(void) drawContent:(CGRect)pagesize name:(NSString*)name pet:(NSString*)text age:(NSString*)age;
 @end

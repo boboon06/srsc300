@@ -17,6 +17,7 @@
     NSString *home = NSHomeDirectory();
     NSString *pdfFile = [home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"];
     NSLog(@"PDF PATH: %@", pdfFile);
+    CGRect pagesize =  CGRectMake(0,0,792,612);
     // Prepare the text using a Core Text Framesetter.
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)[text copy], NULL);
     if (currentText) {
@@ -24,30 +25,16 @@
         if (framesetter) {
             
             // Create the PDF context using the default page size of 612 x 792.
-            CGRect pagesize =  CGRectMake(0,0,792,612);
             UIGraphicsBeginPDFContextToFile(pdfFile, pagesize, nil);
             
             //CFRange currentRange = CFRangeMake(0, 0);
-            NSInteger currentPage = 0;
             BOOL done = NO;
             
             do {
                 // Mark the beginning of a new page.
                 UIGraphicsBeginPDFPageWithInfo(pagesize, nil);
-                CGRect visible = CGRectMake(72,72, pagesize.size.width-144, pagesize.size.height-144);
-                // Draw a page number at the bottom of each page.
-                currentPage++;
-                [self drawBorder:visible width:4 offset:20];
-                [self drawHeader:visible];
-                CGSize last;
-                last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in No School Academy.", age, @"Manehattan, EQ"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width];
-                CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width];
-                last = [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:2*title.height width:(visible.size.width/3)-10];
-                [self drawImage:[home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10];
-                last = [self drawText:@"Respects:\n * Curiosity (Because a Rover that weighs the same as small SUV makes people respect you.)\n * A Good Tasty Heart\n * The Elements Of Harmony\n * The Element of Loyalty." font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
-                last = [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
-                [self drawTimestamp];
-                    done = YES;
+                [self drawContent:pagesize name:name pet:text age:age];
+                                    done = YES;
             } while (!done);
             // Close the PDF context and write the contents out.
             UIGraphicsEndPDFContext();
@@ -66,9 +53,32 @@
     
     // Close the PDF context and write out the contents.
     UIGraphicsEndPDFContext();
+    UIGraphicsBeginImageContext(CGSizeMake(pagesize.size.width, pagesize.size.height));
+    [self drawContent:pagesize name:name pet:text age:age];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    [imageData writeToFile:[home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"] atomically:YES];
     return pdfFile;
 }
-     
+
+-(void) drawContent:(CGRect)pagesize name:(NSString*)name pet:(NSString*)text age:(NSString*)age
+{
+    NSString *home = NSHomeDirectory();
+    CGRect visible = CGRectMake(72,72, pagesize.size.width-144, pagesize.size.height-144);
+    [self drawBorder:visible width:4 offset:20];
+    [self drawHeader:visible];
+    CGSize last;
+    last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in No School Academy.", age, @"Manehattan, EQ"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width];
+    CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width];
+    last = [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:2*title.height width:(visible.size.width/3)-10];
+    [self drawImage:[home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10];
+    last = [self drawText:@"Respects:\n * Curiosity (Because a Rover that weighs the same as small SUV makes people respect you.)\n * A Good Tasty Heart\n * The Elements Of Harmony\n * The Element of Loyalty." font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
+    last = [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
+    [self drawTimestamp];
+
+}
+
 - (CFRange)renderPage:(NSInteger)pageNum withTextRange:(CFRange)currentRange
        andFramesetter:(CTFramesetterRef)framesetter
 {
@@ -169,10 +179,10 @@
     CGSize stringSize = [stamp sizeWithFont:[UIFont systemFontOfSize:7.0]
                                constrainedToSize:CGSizeMake(792, 72)
                                    lineBreakMode:NSLineBreakByWordWrapping];
-    CGRect renderingRect = CGRectMake(792-stringSize.width-5, 612-stringSize.height-5, 792, stringSize.height);
+    CGRect renderingRect = CGRectMake(792-stringSize.width-30, 612-stringSize.height-5, 792, stringSize.height);
     
     [stamp drawInRect:renderingRect
-                  withFont:[UIFont systemFontOfSize:7.0]
+                  withFont:[UIFont systemFontOfSize:8.0]
              lineBreakMode:NSLineBreakByWordWrapping
                  alignment:NSTextAlignmentLeft];
 }

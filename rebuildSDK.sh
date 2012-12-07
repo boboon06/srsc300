@@ -1,0 +1,2 @@
+./cleanFBSDK.sh
+./getFBframework.sh

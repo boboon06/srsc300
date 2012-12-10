@@ -12,8 +12,19 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Blargh" translatesAutoresizingMaskIntoConstraints="NO" id="tnp-yg-ee1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnp-yg-ee1">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.25" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">PRESS RELEASE FROM LANBOX AEROSPACE INC.
+
+December 6 2012
+
+During our first attempt for an orbital rendezvous Kerbalnaut Jebediah Kerman reported a strange communications anomaly shortly before his spacecraft vanished at 16:01 on December 5. The cause of this spatial disturbance is unknown and we are yet to determine Jebediah's location or if he is still alive.
+
+Jeb's mission was to dock his spacecraft, Dexterous Docker with the Aspire Target Vehicle in orbit 100km above Kerbin's surface.
+
+All of our team are currently working to solve this mystery and bring our lost Kerbalnaut back safely.
+
+The Aspire Target vehicle appears to be untouched by this incident and remains in orbit around Kerbin. Scientists are hopeful that the ATV's on-board instruments will provide useful data on the anomaly.</mutableString>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -83,7 +94,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pn-rM-GV8">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Post to Facebook">
+                                <state key="normal" title="Post Diploma to Facebook">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

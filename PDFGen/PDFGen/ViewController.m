@@ -200,7 +200,6 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
                                                           FBSessionState status,
                                                           NSError *error) {
                                           NSLog(@"FBLogin Returned \"%u\"", status);
-                                          // if login fails for any reason, we alert
                                           if (error) {
                                               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                                               message:error.localizedDescription
@@ -208,59 +207,26 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
                                                                                     cancelButtonTitle:@"OK"
                                                                                     otherButtonTitles:nil];
                                               [alert show];
-                                              // if otherwise we check to see if the session is open, an alternative to
-                                              // to the FB_ISSESSIONOPENWITHSTATE helper-macro would be to check the isOpen
-                                              // property of the session object; the macros are useful, however, for more
-                                              // detailed state checking for FBSession objects
                                           } else if (FB_ISSESSIONOPENWITHSTATE(status)) {
-                                              // send our requests if we successfully logged in
-                                              //[self fbrequest];
                                               [self fbpush];
                                           }
                                       }];
     }
 }
-// FBSample logic
-// Read the ids to request from textObjectID and generate a FBRequest
-// object for each one.  Add these to the FBRequestConnection and
-// then connect to Facebook to get results.  Store the FBRequestConnection
-// in case we need to cancel it before it returns.
-//
-// When a request returns results, call requestComplete:result:error.
-//
+
 - (void)fbrequest {
-    // extract the id's for which we will request the profile
-    NSString *request = @"1220150977,100001650575332,100000202263149,1587736808,100000022841550,1002822061,1498093966,1190915752,669255834,1850316793,1348850863,100000144623492,562743721,100003050986582,1397499215,100001269642681,100000518410942,100003034864366,100000366157963,1434103987,1542074799,699059842,100000497254165,100000406801244,553079108,1427228282,1599320169,1065907340,1466179462,782979917,100000490394384,100000565153169,1195502962,100000151253733,100001364978712,740543516,621288725,1423760681,1008534015,100001141082952,1556354981,1818608947,679991516,100000561615020,100001220022869,1058441328,671916891,1385750421,100002324959387,690140428,100000095483902,100000469879527,1171601575,100001070898083,100001093847994,100000247518298,549029516,1738584301,100001905340718,100002241078860,100001962864246,100000904822046,1391385782,1280596305,100000746829588,100001025555197,1234663786,678096275,1170862484,100000052456720,687520388,1644858455,1298343016,810670402,757930520,100000026814808,1272796036,773860435,219400149,100002178611733,1416185848,627882736,100001146138200,100000090714943,1502739717,1349550892,100000426712293,100001024337319,100000291519429,1537029452,100000774664235,1350301618,817486305,1135545249,100000234396593,732292736,1172130794,1797061289,1460155400,543445811,100000843726949,100000895582218,1461254393";
+    NSString *request = @"";
     NSArray *fbids = [request componentsSeparatedByString:@","];
-    
-  
-    // create the connection object
+
     FBRequestConnection *newConnection = [[FBRequestConnection alloc] init];
-    
-    // for each fbid in the array, we create a request object to fetch
-    // the profile, along with a handler to respond to the results of the request
     int querycount = 0;
     for (NSString *fbid in fbids) {
-        
-        // create a handler block to handle the results of the request for fbid's profile
         FBRequestHandler handler =
         ^(FBRequestConnection *connection, id result, NSError *error) {
-            // output the results of the request
             [self requestCompleted:connection forFbID:fbid result:result error:error];
         };
-        
-        // create the request object, using the fbid as the graph path
-        // as an alternative the request* static methods of the FBRequest class could
-        // be used to fetch common requests, such as /me and /me/friends
         NSLog(@"Requesting \"%@\"", fbid);
-        FBRequest *request = [[FBRequest alloc] initWithSession:FBSession.activeSession
-                                                      graphPath:fbid];
-        
-        // add the request to the connection object, if more than one request is added
-        // the connection object will compose the requests as a batch request; whether or
-        // not the request is a batch or a singleton, the handler behavior is the same,
-        // allowing the application to be dynamic in regards to whether a single or multiple
-        // requests are occuring
+        FBRequest *request = [[FBRequest alloc] initWithSession:FBSession.activeSession graphPath:fbid];
         [newConnection addRequest:request completionHandler:handler];
         querycount++;
         if (querycount > 30)
@@ -276,30 +242,15 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
     }
 }
 
-// FBSample logic
-// Report any results.  Invoked once for each request we make.
 - (void)requestCompleted:(FBRequestConnection *)connection
                  forFbID:fbID
                   result:(id)result
-                   error:(NSError *)error {
-    // not the completion we were looking for...
-    //if (self.fbconnection &&
-      //  connection != self.fbconnection) {
-        //return;
-    //}
-    
-    // ARC Clean.
-    //self.fbconnection = nil;
-        
+                   error:(NSError *)error {       
     NSString *text;
     if (error) {
-        // error contains details about why the request failed
-        text = error.localizedDescription;
         NSLog(@"ERROR: %@ CAUSE: %@", error.localizedDescription, error.localizedFailureReason);
     } else {
-        // result is the json response from a successful request
         NSDictionary *dictionary = (NSDictionary *)result;
-        // we pull the name property out, if there is one, and display it
         text = (NSString *)[dictionary objectForKey:@"name"];
         text = [text stringByAppendingFormat:@". Gender: %@", [[dictionary objectForKey:@"gender"] capitalizedString]];
         text = [text stringByAppendingFormat:@". Currently: %@", [[dictionary objectForKey:@"relationship_status"] capitalizedString]];
@@ -310,6 +261,10 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
                                  [fbID stringByTrimmingCharactersInSet:
                                   [NSCharacterSet whitespaceAndNewlineCharacterSet]],
                                  text]);
+            
+            // I was totaly not finding who the Single women are on my Facebook Friends list.
+            // Then sorting them into the hot or not categories.
+            // To bad that if I theoretically was. I wouldn't have a chance.
         }
 
         
@@ -326,6 +281,13 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
          completionHandler:
      ^(FBRequestConnection *connection, id result, NSError *error) {
          if (!error) {
+             NSLog(@"POSTED DIPLOMA TO FACEBOOK!");
+             popup(@"Success!", @"That's it! You have successfuly posted your diploma on your Facebook wall!");
+         }
+         else
+         {
+             popup(@"Oh no!", @"I don't know why... But I couldn't post that to your Facebook wall ;( Please try again.");
+             NSLog(@"ERROR: %@", error.localizedDescription);
          }
      }
      ];

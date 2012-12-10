@@ -419,6 +419,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "PDF Test";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -438,6 +439,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "PDF Test";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -30,7 +30,7 @@
     NSString *imagepath = [home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"];
     UIImage *imagedata = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagepath]];
     [rmimagebox setImage:[UIImage imageWithCGImage:[imagedata CGImage] scale: 1 orientation:UIImageOrientationUp ]];
-    [FBSession.activeSession closeAndClearTokenInformation];
+    [FBSession.activeSession closeAndClearTokenInformation]; // Force a re-Auth on start. Device could be shared.
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,12 +76,14 @@
     {
             if ([mailClass canSendMail])
         {
-            [self displayComposerSheet];
+            NSLog(@"CALLING MAILER!");
+            [self displayComposerSheet]; // Mail that shit!
         }
         else
         {
+            // In the final app, the App just wouldn't send. Due to this App for testing sending. It will!
             message = [message initWithTitle:@"Sorry"
-                                                              message:@"Your device hasn't been set up to send emails."
+                                                              message:@"Your device hasn't been set up to send emails. Please contact your System Administrator. App will now close."
                                                              delegate:self
                                                     cancelButtonTitle:@"OK"
                                                     otherButtonTitles:nil];
@@ -91,7 +93,7 @@
     else
     {
         message = [message initWithTitle:@"Sorry"
-                                                          message:@"Your device doesn't support sending emails in-app."
+                                                          message:@"Your device doesn't support sending emails in-app. Please contact your System Administrator. App will now close."
                                                          delegate:self
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles:nil];
@@ -124,7 +126,7 @@
 
     
     // Fill out the email body text
-    NSString *emailBody = @"OHMYGERD I've finished it!\nFinaly!";
+    NSString *emailBody = @"OHMYGERD I've finished it!\nFinaly!"; // What else should I say?
     [picker setMessageBody:emailBody isHTML:NO];
     
     [self presentViewController:picker animated:YES completion:nil];
@@ -185,14 +187,10 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
 
 -(IBAction)facebook:(id)sender
 {
-    // FBSample logic
     // Check to see whether we have already opened a session.
     if (FBSession.activeSession.isOpen) {
-        // login is integrated with the send button -- so if open, we send
-        NSLog(@"Facebook Logged in");
-        //[self fbrequest];
+        [self fbpush]; // For some reason. This never gets called.
     } else {
-        NSLog(@"Facebook Not Logged in");
         [FBSession openActiveSessionWithPublishPermissions:[@"publish_actions" componentsSeparatedByString:@","]
          defaultAudience:FBSessionDefaultAudienceFriends
                                               allowLoginUI:YES
@@ -208,13 +206,15 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
                                                                                     otherButtonTitles:nil];
                                               [alert show];
                                           } else if (FB_ISSESSIONOPENWITHSTATE(status)) {
-                                              [self fbpush];
+                                              [self fbpush]; // I'm in! Begin Operation PSYCOPS.
                                           }
                                       }];
     }
 }
 
 - (void)fbrequest {
+    // This was testing if my API Intergration was working.
+    // Since it was better to PULL data from my Facebook. Than Cluttering my Friends stream.
     NSString *request = @"";
     NSArray *fbids = [request componentsSeparatedByString:@","];
 
@@ -264,7 +264,9 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
             
             // I was totaly not finding who the Single women are on my Facebook Friends list.
             // Then sorting them into the hot or not categories.
-            // To bad that if I theoretically was. I wouldn't have a chance.
+            // To bad that if I theoretically was. I wouldn't have a chance with any of them.
+            
+            // It was purely String comparison testing. :Shiftyeyes:
         }
 
         
@@ -291,27 +293,21 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
          }
      }
      ];
+    /*
+     //If we ever need to upload video... this is how.
+     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"mov"]; // Or W/E the path to the video is.
+     NSData *videoData = [NSData dataWithContentsOfFile:filePath];
+     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+     videoData, @"video.mov",
+     @"video/quicktime", @"contentType",
+     @"No School Acadamy. Who I like and Why?", @"title",
+     @"I was asked who did I like, and what traits about them I liked. And this is what I said about them.", @"description",
+     nil];
+     [connection requestWithGraphPath:@"me/videos"
+     andParams:params
+     andHttpMethod:@"POST" // Post things EVERYWERE!
+     andDelegate:self];
+     */
     [connection start];
 }
-
-// Debug.
--(void) writeToTextFile:(NSString*)text filename:(NSString*)filename{
-    //get the documents directory:
-    NSArray *paths = NSSearchPathForDirectoriesInDomains
-    (NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    //make a file name to write the data to using the documents directory:
-    NSString *fileName = [NSString stringWithFormat:@"%@/%@.txt",
-                          documentsDirectory, filename];
-    //create content - four lines of text
-    NSString *content = text;
-    //save content to the documents directory
-    [content writeToFile:fileName
-              atomically:YES
-                encoding:NSStringEncodingConversionAllowLossy
-                   error:nil];
-    
-}
-
 @end

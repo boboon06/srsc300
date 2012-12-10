@@ -42,7 +42,4 @@
                   result:(id)result
                    error:(NSError *)error;
 
-//Debug.
--(void) writeToTextFile:(NSString*)text filename:(NSString*)filename;
-
 @end

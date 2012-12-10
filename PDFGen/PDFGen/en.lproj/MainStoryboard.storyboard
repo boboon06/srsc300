@@ -58,7 +58,7 @@
                                 </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="242" id="EHP-vm-yOv"/>
-                                    <constraint firstAttribute="width" constant="206" id="aAJ-05-mPw"/>
+                                    <constraint firstAttribute="width" constant="206" id="gMN-bh-dSb"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Role Model Image:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9W-Ih-eQy">
@@ -81,6 +81,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pn-rM-GV8">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Post to Facebook">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebook:" destination="2" eventType="touchUpInside" id="0b9-Wv-nMt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -88,6 +101,7 @@
                             <constraint firstAttribute="trailing" secondItem="tnp-yg-ee1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2pJ-7E-S3L"/>
                             <constraint firstItem="5aW-d3-nRx" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="5B6-Mj-tFS"/>
                             <constraint firstItem="gIF-Ed-5K9" firstAttribute="leading" secondItem="onA-ID-WCE" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5wI-PL-2OU"/>
+                            <constraint firstAttribute="bottom" secondItem="8Pn-rM-GV8" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6LJ-iC-yHb"/>
                             <constraint firstItem="tnp-yg-ee1" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6Nj-Rb-1e8"/>
                             <constraint firstItem="jxI-A5-Twb" firstAttribute="baseline" secondItem="onA-ID-WCE" secondAttribute="baseline" type="default" id="6WC-Fn-txs"/>
                             <constraint firstItem="onA-ID-WCE" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7qj-4Y-Xor"/>
@@ -101,6 +115,7 @@
                             <constraint firstItem="tnp-yg-ee1" firstAttribute="centerX" secondItem="c9W-Ih-eQy" secondAttribute="centerX" type="default" id="Rfc-i5-iDB"/>
                             <constraint firstItem="onA-ID-WCE" firstAttribute="top" secondItem="5" secondAttribute="top" constant="24" id="UPG-l3-iWK"/>
                             <constraint firstItem="CH0-Pd-Du0" firstAttribute="top" secondItem="gIF-Ed-5K9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WJV-ka-0Mh"/>
+                            <constraint firstItem="8Pn-rM-GV8" firstAttribute="leading" secondItem="aOC-tE-FLl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="cuP-SY-fYg"/>
                             <constraint firstItem="c9W-Ih-eQy" firstAttribute="top" secondItem="tnp-yg-ee1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gZc-fY-vuE"/>
                             <constraint firstItem="jxI-A5-Twb" firstAttribute="leading" secondItem="gIF-Ed-5K9" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="j35-RB-3SE"/>
                             <constraint firstItem="5aW-d3-nRx" firstAttribute="leading" secondItem="jxI-A5-Twb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="kZY-s0-Sjf"/>
@@ -126,6 +141,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="facebook:"/>
                 <relationship kind="action" name="text_return:"/>
                 <relationship kind="outlet" name="age" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>

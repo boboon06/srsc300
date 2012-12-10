@@ -15,8 +15,7 @@
 @interface PDFgen : NSObject
 @property (nonatomic) int headeroffset;
 
-- (NSString*)createPDFname: (NSString*)name pet:(NSString*)text age:(NSString*)age;
-- (CFRange)renderPage:(NSInteger)pageNum withTextRange:(CFRange)currentRange andFramesetter:(CTFramesetterRef)framesetter;
+- (NSString*)createPDF:(NSString*)name pet:(NSString*)text age:(NSString*)age;
 -(void)drawHeader:(CGRect)pageSize;
 - (void) drawBorder:(CGRect)area width:(int)width offset:(int)offset;
 - (CGSize) drawText:(NSString*)textToDraw font:(UIFont*)font x:(int)x y:(int)y width:(int)width;
@@ -24,4 +23,5 @@
 - (void) drawTimestamp;
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 -(void) drawContent:(CGRect)pagesize name:(NSString*)name pet:(NSString*)text age:(NSString*)age;
+- (NSString*)createJPG:(NSString*)name pet:(NSString*)text age:(NSString*)age;
 @end

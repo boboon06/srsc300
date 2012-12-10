@@ -22,9 +22,14 @@
 		885A380D1666A68900AF4DFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885A37E81666A68800AF4DFF /* Foundation.framework */; };
 		885A38151666A68900AF4DFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 885A38131666A68900AF4DFF /* InfoPlist.strings */; };
 		885A38181666A68900AF4DFF /* PDFGenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 885A38171666A68900AF4DFF /* PDFGenTests.m */; };
+		8895CF5016702F1600981461 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8895CF4F16702F1600981461 /* Accounts.framework */; };
+		8895CF5316702F3D00981461 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8895CF5216702F3D00981461 /* Social.framework */; };
 		88A95F02166701BE000B2198 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A95F01166701BE000B2198 /* MessageUI.framework */; };
 		88C5C84D1666AD1900568661 /* PDFgen.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5C84C1666AD1900568661 /* PDFgen.m */; };
 		88C5C8571666C09E00568661 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C5C8561666C09E00568661 /* CoreText.framework */; };
+		88FC0C5B16752A820084CE43 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC0C5A16752A820084CE43 /* FacebookSDK.framework */; };
+		88FC0C6016752C030084CE43 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC0C5F16752C030084CE43 /* libsqlite3.dylib */; };
+		88FC0C6216752C600084CE43 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC0C6116752C600084CE43 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +64,15 @@
 		885A38141666A68900AF4DFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		885A38161666A68900AF4DFF /* PDFGenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFGenTests.h; sourceTree = "<group>"; };
 		885A38171666A68900AF4DFF /* PDFGenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFGenTests.m; sourceTree = "<group>"; };
+		8895CF4F16702F1600981461 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8895CF5216702F3D00981461 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		88A95F01166701BE000B2198 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		88C5C84B1666AD1900568661 /* PDFgen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFgen.h; path = ../PDFgen.h; sourceTree = "<group>"; };
 		88C5C84C1666AD1900568661 /* PDFgen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDFgen.m; path = ../PDFgen.m; sourceTree = "<group>"; };
 		88C5C8561666C09E00568661 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		88FC0C5A16752A820084CE43 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = /Volumes/Scratch/facebookSDK/build/FacebookSDK.framework; sourceTree = "<absolute>"; };
+		88FC0C5F16752C030084CE43 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		88FC0C6116752C600084CE43 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FC0C6216752C600084CE43 /* AdSupport.framework in Frameworks */,
+				88FC0C6016752C030084CE43 /* libsqlite3.dylib in Frameworks */,
+				88FC0C5B16752A820084CE43 /* FacebookSDK.framework in Frameworks */,
+				8895CF5316702F3D00981461 /* Social.framework in Frameworks */,
+				8895CF5016702F1600981461 /* Accounts.framework in Frameworks */,
 				88A95F02166701BE000B2198 /* MessageUI.framework in Frameworks */,
 				88C5C8571666C09E00568661 /* CoreText.framework in Frameworks */,
 				885A37E71666A68800AF4DFF /* UIKit.framework in Frameworks */,
@@ -113,6 +128,11 @@
 		885A37E51666A68800AF4DFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88FC0C6116752C600084CE43 /* AdSupport.framework */,
+				88FC0C5F16752C030084CE43 /* libsqlite3.dylib */,
+				88FC0C5A16752A820084CE43 /* FacebookSDK.framework */,
+				8895CF5216702F3D00981461 /* Social.framework */,
+				8895CF4F16702F1600981461 /* Accounts.framework */,
 				88A95F01166701BE000B2198 /* MessageUI.framework */,
 				88C5C8561666C09E00568661 /* CoreText.framework */,
 				885A37E61666A68800AF4DFF /* UIKit.framework */,
@@ -388,6 +408,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					/Volumes/Scratch/facebookSDK/build,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PDFGen/PDF Test-Prefix.pch";
 				INFOPLIST_FILE = "PDFGen/PDF Test-Info.plist";
@@ -402,6 +427,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					/Volumes/Scratch/facebookSDK/build,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PDFGen/PDF Test-Prefix.pch";
 				INFOPLIST_FILE = "PDFGen/PDF Test-Info.plist";

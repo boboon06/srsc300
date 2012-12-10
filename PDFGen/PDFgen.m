@@ -11,7 +11,7 @@
 @implementation PDFgen
 @synthesize headeroffset;
 
-- (NSString*)createPDFname: (NSString*)name pet:(NSString*)text age:(NSString*)age
+- (NSString*)createPDF:(NSString*)name pet:(NSString*)text age:(NSString*)age
 {
     NSLog(@"PDF TEXT: %@", text);
     NSString *home = NSHomeDirectory();
@@ -49,17 +49,24 @@
         CFRelease(currentText);
     } else {
         NSLog(@"Could not create the attributed string for the framesetter");
-    }
-    
+    }    
     // Close the PDF context and write out the contents.
     UIGraphicsEndPDFContext();
+    return pdfFile;
+}
+
+- (NSString*)createJPG:(NSString*)name pet:(NSString*)text age:(NSString*)age
+{
+    NSString *home = NSHomeDirectory();
+    NSString *jpgpath = [home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"];
+    CGRect pagesize =  CGRectMake(0,0,792,612);
     UIGraphicsBeginImageContext(CGSizeMake(pagesize.size.width, pagesize.size.height));
     [self drawContent:pagesize name:name pet:text age:age];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-    [imageData writeToFile:[home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"] atomically:YES];
-    return pdfFile;
+    [imageData writeToFile:jpgpath atomically:YES];
+    return jpgpath;
 }
 
 -(void) drawContent:(CGRect)pagesize name:(NSString*)name pet:(NSString*)text age:(NSString*)age
@@ -69,36 +76,14 @@
     [self drawBorder:visible width:4 offset:20];
     [self drawHeader:visible];
     CGSize last;
-    last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in No School Academy.", age, @"Manehattan, EQ"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width];
+    last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in API testing.", age, @"Manehattan, EQ"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width];
     CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width];
     last = [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:2*title.height width:(visible.size.width/3)-10];
     [self drawImage:[home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10];
-    last = [self drawText:@"Respects:\n * Curiosity (Because a Rover that weighs the same as small SUV makes people respect you.)\n * A Good Tasty Heart\n * The Elements Of Harmony\n * The Element of Loyalty." font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
+    last = [self drawText:@"Respects:\n * Curiosity (Because a Rover that weighs the same as small SUV makes people respect you.)\n * The Element of Loyalty.\n * Fearlessness\n * Smart" font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
     last = [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:2*title.height width:(visible.size.width/3)-10];
     [self drawTimestamp];
 
-}
-
-- (CFRange)renderPage:(NSInteger)pageNum withTextRange:(CFRange)currentRange
-       andFramesetter:(CTFramesetterRef)framesetter
-{
-    CGContextRef    currentContext = UIGraphicsGetCurrentContext();
-    CGContextSetTextMatrix(currentContext, CGAffineTransformIdentity);
-    CGRect    frameRect = CGRectMake(72, 72, 648, 468);
-    CGMutablePathRef framePath = CGPathCreateMutable();
-    CGPathAddRect(framePath, NULL, frameRect);
-    CTFrameRef frameRef = CTFramesetterCreateFrame(framesetter, currentRange, framePath, NULL);
-    CGPathRelease(framePath);
-    CGContextTranslateCTM(currentContext, 0, 612);
-    CGContextScaleCTM(currentContext, 1.0, -1.0);
-    CTFrameDraw(frameRef, currentContext);
-    CGContextScaleCTM(currentContext, 1.0, -1.0);
-    CGContextTranslateCTM(currentContext, 0, -612);
-    currentRange = CTFrameGetVisibleStringRange(frameRef);
-    currentRange.location += currentRange.length;
-    currentRange.length = 0;
-    CFRelease(frameRef);
-    return currentRange;
 }
 
 - (void) drawHeader:(CGRect)pageSize

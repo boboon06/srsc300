@@ -82,7 +82,7 @@
     // Attach ALL the things!
     NSString *home = NSHomeDirectory();
     attach([home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"], @"application/pdf", [@"Joshua Holland" stringByAppendingString:@"'s Diploma.pdf"], picker);
-    attach([home stringByAppendingString:@"/Documents/Role_model.png"], @"image/png", [@"Joshua Holland" stringByAppendingString:@" Role Model.png"], picker);
+    attach([home stringByAppendingString:@"/Documents/role_model.png"], @"image/png", [@"Joshua Holland" stringByAppendingString:@" Role Model.png"], picker);
     
     
     // Fill out the email body text

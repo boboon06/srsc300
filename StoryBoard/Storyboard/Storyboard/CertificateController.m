@@ -33,6 +33,7 @@
     UIImage *imagedata = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagepath]];
     CGFloat scale = certview.frame.size.width/imagedata.size.width;
     [certview setImage:[UIImage imageWithCGImage:[imagedata CGImage] scale: scale orientation:UIImageOrientationUp ]];
+    [FBSession.activeSession closeAndClearTokenInformation]; // Force a re-Auth on start. Device could be shared. Plus it doesn't work if I don't have this.
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,5 +132,72 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
 {
     NSData *myData = [NSData dataWithContentsOfFile:path];
     [picker addAttachmentData:myData mimeType:MIME fileName:name];
+}
+
+#pragma mark Facebook Intergration
+-(IBAction)facebook:(id)sender
+{
+    // Check to see whether we have already opened a session.
+    if (FBSession.activeSession.isOpen) {
+        [self fbpush]; // For some reason. This never gets called.
+    } else {
+        [FBSession openActiveSessionWithPublishPermissions:[@"publish_actions" componentsSeparatedByString:@","]
+                                           defaultAudience:FBSessionDefaultAudienceFriends
+                                              allowLoginUI:YES
+                                         completionHandler:^(FBSession *session,
+                                                             FBSessionState status,
+                                                             NSError *error) {
+                                             NSLog(@"FBLogin Returned \"%u\"", status);
+                                             if (error) {
+                                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                                 message:error.localizedDescription
+                                                                                                delegate:nil
+                                                                                       cancelButtonTitle:@"OK"
+                                                                                       otherButtonTitles:nil];
+                                                 [alert show];
+                                             } else if (FB_ISSESSIONOPENWITHSTATE(status)) {
+                                                 [self fbpush]; // I'm in! Begin Operation PSYCOPS.
+                                             }
+                                         }];
+    }
+}
+
+-(void)fbpush
+{
+    NSString *home = NSHomeDirectory();
+    NSString *imagepath = [home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"];
+    FBRequestConnection *connection = [[FBRequestConnection alloc] init];
+    FBRequest *request1 = [FBRequest
+                           requestForUploadPhoto:[UIImage imageWithContentsOfFile:imagepath]];
+    [connection addRequest:request1
+         completionHandler:
+     ^(FBRequestConnection *connection, id result, NSError *error) {
+         if (!error) {
+             NSLog(@"POSTED DIPLOMA TO FACEBOOK!");
+             popup(@"Success!", @"That's it! You have successfuly posted your diploma on your Facebook wall!");
+         }
+         else
+         {
+             popup(@"Oh no!", @"I don't know why... But I couldn't post that to your Facebook wall ;( Please try again.");
+             NSLog(@"ERROR: %@", error.localizedDescription);
+         }
+     }
+     ];
+    /*
+     //If we ever need to upload video... this is how.
+     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"mov"]; // Or W/E the path to the video is.
+     NSData *videoData = [NSData dataWithContentsOfFile:filePath];
+     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+     videoData, @"video.mov",
+     @"video/quicktime", @"contentType",
+     @"No School Acadamy. Who I like and Why?", @"title",
+     @"I was asked who did I like, and what traits about them I liked. And this is what I said about them.", @"description",
+     nil];
+     [connection requestWithGraphPath:@"me/videos"
+     andParams:params
+     andHttpMethod:@"POST" // Post things EVERYWERE!
+     andDelegate:self];
+     */
+    [connection start];
 }
 @end

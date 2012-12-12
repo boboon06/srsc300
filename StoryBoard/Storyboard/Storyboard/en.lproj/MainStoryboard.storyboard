@@ -403,6 +403,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebook:" destination="9iP-s5-lut" eventType="touchUpInside" id="vbz-cs-3Pb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="w7Z-Jv-D19"/>
                         </subviews>
@@ -726,6 +729,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CertificateController.h"/>
             <relationships>
                 <relationship kind="action" name="email:"/>
+                <relationship kind="action" name="facebook:"/>
                 <relationship kind="outlet" name="certview" candidateClass="UIImageView"/>
             </relationships>
         </class>

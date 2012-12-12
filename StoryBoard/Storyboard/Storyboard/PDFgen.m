@@ -95,7 +95,7 @@
     CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width]; // Draw the name with a trailing :
     [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the Admires title.
     [self drawImage:[home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10]; // Draw the image/possible text. [206 pt wide. Drawn Width Fit.]
-    [self drawText:traits_out font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the traits that the user respects.
+    [self drawText:[@"Respects:\r\n" stringByAppendingString:traits_out] font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the traits that the user respects.
     [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the user's spiel.
     [self drawTimestamp]; // Draw a small Generated Timestamp (Bottom Right).
 

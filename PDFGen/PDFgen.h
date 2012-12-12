@@ -16,7 +16,7 @@
 @property (nonatomic) int headeroffset;
 @property (nonatomic) CGRect pagesize;
 
-- (NSString*)createPDF:(NSString*)name pet:(NSString*)text age:(NSString*)age;
+- (NSString*)createPDF:(NSObject*)values;
 -(void)drawHeader:(CGRect)pageSize;
 - (void) drawBorder:(CGRect)area width:(int)width offset:(int)offset;
 - (CGSize) drawText:(NSString*)textToDraw font:(UIFont*)font x:(int)x y:(int)y width:(int)width;
@@ -24,5 +24,5 @@
 - (void) drawTimestamp;
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 -(void) drawContentname:(NSString*)name pet:(NSString*)text age:(NSString*)age;
-- (NSString*)createJPG:(NSString*)name pet:(NSString*)text age:(NSString*)age;
+- (NSString*)createJPG:(NSObject*)values;
 @end

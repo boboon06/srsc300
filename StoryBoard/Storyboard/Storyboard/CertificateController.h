@@ -7,7 +7,12 @@
 //
 
 #import "TaskController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface CertificateController : UIViewController
 @property (nonatomic, retain) IBOutlet UIImageView *certview;
+
+-(IBAction)email:(id)sender;
+-(void)displayComposerSheet;
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error;
 @end

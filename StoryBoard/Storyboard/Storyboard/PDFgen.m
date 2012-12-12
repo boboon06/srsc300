@@ -81,7 +81,7 @@
     int trait_count = 0;
     while (trait_count < sizeof(traits))
     {
-        traits_out = [traits_out stringByAppendingFormat:@" * %@\r\n", traits[trait_count]];
+        traits_out = [traits_out stringByAppendingFormat:@" * %@\r\n", [[NSString stringWithString:traits[trait_count]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         trait_count++;
     }
         
@@ -94,7 +94,7 @@
     last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in Not Breaking it!", age, @"Manehattan, EQ"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width]; // Draw the short spiel.
     CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width]; // Draw the name with a trailing :
     [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the Admires title.
-    [self drawImage:[home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10]; // Draw the image/possible text. [206 pt wide. Drawn Width Fit.]
+    [self drawImage:[home stringByAppendingString:@"/Documents/role_model.jpg"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10]; // Draw the image/possible text. [206 pt wide. Drawn Width Fit.]
     [self drawText:[@"Respects:\r\n" stringByAppendingString:traits_out] font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the traits that the user respects.
     [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the user's spiel.
     [self drawTimestamp]; // Draw a small Generated Timestamp (Bottom Right).

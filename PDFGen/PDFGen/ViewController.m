@@ -110,12 +110,12 @@
     
     
     // Set up recipients
-    NSArray *toRecipients = [NSArray arrayWithObject:@"jsh23@students.waikato.ac.nz"];
+    //NSArray *toRecipients = [NSArray arrayWithObject:@"jsh23@students.waikato.ac.nz"];
     //NSArray *ccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil];
     //NSArray *bccRecipients = [NSArray arrayWithObject:@"videos@theboboon.com"];
     
     //Add then to the email.
-    [picker setToRecipients:toRecipients];
+    //[picker setToRecipients:toRecipients];
     //[picker setCcRecipients:ccRecipients];
     //[picker setBccRecipients:bccRecipients];
     

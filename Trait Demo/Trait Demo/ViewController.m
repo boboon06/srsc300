@@ -26,7 +26,7 @@
     }
     temp = nil;
     //Setting it up so that a n amount of traits can be selected
-    maxSelectedTraits = 3;
+    maxSelectedTraits = 5;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,9 +7,10 @@
 //
 
 #import "TaskController.h"
+#import "PDFgen.h"
 
 @interface TaskCompleted : UIViewController
-
+- (IBAction)clickLearn:(id)sender;
 - (IBAction)clickFacebook:(id)sender;
-
+- (IBAction)gencert:(id)sender;
 @end

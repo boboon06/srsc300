@@ -12,6 +12,8 @@
 
 @end
 
+@class PDFgen;
+
 @implementation TaskCompleted
 
 - (IBAction)clickLearn:(id)sender {
@@ -22,6 +24,12 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://facebook.com/"]];
 }
 
+- (IBAction)gencert:(id)sender
+{
+    id gen = [PDFgen new];
+    [gen createPDF:nil];
+    [gen createJPG:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

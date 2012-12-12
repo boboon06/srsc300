@@ -156,19 +156,14 @@
             </objects>
             <point key="canvasLocation" x="-1105" y="1713"/>
         </scene>
-        <!--View Controller-->
+        <!--Certificate Controller-->
         <scene sceneID="GOg-gp-ifP">
             <objects>
-                <viewController id="9iP-s5-lut" sceneMemberID="viewController">
+                <viewController id="9iP-s5-lut" customClass="CertificateController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ig-Ez-db2">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Certificate displayed here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-1C-HUI">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l15-hf-6ye">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Email this certificate">
@@ -189,18 +184,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="w7Z-Jv-D19"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="w7Z-Jv-D19" firstAttribute="leading" secondItem="9Ig-Ez-db2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0fN-EG-fAv"/>
+                            <constraint firstItem="w7Z-Jv-D19" firstAttribute="top" secondItem="l15-hf-6ye" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="94l-xG-DKZ"/>
+                            <constraint firstItem="sQl-AH-oVt" firstAttribute="top" secondItem="9Ig-Ez-db2" secondAttribute="top" constant="20" symbolic="YES" type="default" id="C6L-Za-DAT"/>
                             <constraint firstItem="sQl-AH-oVt" firstAttribute="leading" secondItem="l15-hf-6ye" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="IVh-vf-KrW"/>
-                            <constraint firstItem="sQl-AH-oVt" firstAttribute="baseline" secondItem="l15-hf-6ye" secondAttribute="baseline" type="default" id="PfI-Fx-VnC"/>
-                            <constraint firstItem="ifD-1C-HUI" firstAttribute="leading" secondItem="9Ig-Ez-db2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ru2-nH-XhO"/>
-                            <constraint firstItem="l15-hf-6ye" firstAttribute="top" secondItem="ifD-1C-HUI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VId-pm-e5z"/>
-                            <constraint firstItem="ifD-1C-HUI" firstAttribute="top" secondItem="9Ig-Ez-db2" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YYj-nf-v7Y"/>
+                            <constraint firstAttribute="bottom" secondItem="w7Z-Jv-D19" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Xir-wV-Edu"/>
+                            <constraint firstItem="l15-hf-6ye" firstAttribute="top" secondItem="9Ig-Ez-db2" secondAttribute="top" constant="20" symbolic="YES" type="default" id="alg-JN-CUW"/>
+                            <constraint firstAttribute="trailing" secondItem="w7Z-Jv-D19" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rVR-ir-o3T"/>
                             <constraint firstItem="l15-hf-6ye" firstAttribute="leading" secondItem="9Ig-Ez-db2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zFS-hV-GYx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2Tr-zS-1jq"/>
+                    <connections>
+                        <outlet property="certview" destination="w7Z-Jv-D19" id="4Se-RZ-s2h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ase-fA-Tgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,6 +261,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="gencert:" destination="vc5-js-OQ9" eventType="touchUpInside" id="TGz-s1-4cd"/>
                                     <segue destination="9iP-s5-lut" kind="push" id="eVL-Bn-YR1"/>
                                 </connections>
                             </button>
@@ -500,6 +502,12 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CertificateController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CertificateController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="certview" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -510,6 +518,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TaskCompleted.h"/>
             <relationships>
                 <relationship kind="action" name="clickFacebook:"/>
+                <relationship kind="action" name="clickLearn:"/>
+                <relationship kind="action" name="gencert:"/>
             </relationships>
         </class>
         <class className="TaskController" superclassName="UIViewController">

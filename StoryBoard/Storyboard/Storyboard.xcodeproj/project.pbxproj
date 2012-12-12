@@ -26,6 +26,8 @@
 		64DEE39216787781001AD0DF /* TaskCompleted.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DEE39116787781001AD0DF /* TaskCompleted.m */; };
 		64DEE39516787A74001AD0DF /* CertificateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DEE39416787A74001AD0DF /* CertificateController.m */; };
 		64DEE39B16787C78001AD0DF /* DidYouKnowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DEE39A16787C78001AD0DF /* DidYouKnowController.m */; };
+		88E524391679206D00702CCB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E524381679206D00702CCB /* CoreText.framework */; };
+		88E5243F1679226800702CCB /* PDFgen.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C6490C16791E6B009487B4 /* PDFgen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,9 @@
 		64DEE39416787A74001AD0DF /* CertificateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificateController.m; sourceTree = "<group>"; };
 		64DEE39916787C78001AD0DF /* DidYouKnowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DidYouKnowController.h; sourceTree = "<group>"; };
 		64DEE39A16787C78001AD0DF /* DidYouKnowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DidYouKnowController.m; sourceTree = "<group>"; };
+		88C6490B16791E6B009487B4 /* PDFgen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFgen.h; sourceTree = "<group>"; };
+		88C6490C16791E6B009487B4 /* PDFgen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFgen.m; sourceTree = "<group>"; };
+		88E524381679206D00702CCB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				649D1EC61670677B00EAC40A /* UIKit.framework in Frameworks */,
+				88E524391679206D00702CCB /* CoreText.framework in Frameworks */,
 				649D1EC81670677B00EAC40A /* Foundation.framework in Frameworks */,
 				649D1ECA1670677B00EAC40A /* CoreGraphics.framework in Frameworks */,
 			);
@@ -97,6 +103,7 @@
 		649D1EC41670677B00EAC40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88E524381679206D00702CCB /* CoreText.framework */,
 				649D1EC51670677B00EAC40A /* UIKit.framework */,
 				649D1EC71670677B00EAC40A /* Foundation.framework */,
 				649D1EC91670677B00EAC40A /* CoreGraphics.framework */,
@@ -128,6 +135,8 @@
 				64DEE3681678574F001AD0DF /* TaskController.m */,
 				649D1EE01670677B00EAC40A /* StoryboardViewController.h */,
 				649D1EE11670677B00EAC40A /* StoryboardViewController.m */,
+				88C6490B16791E6B009487B4 /* PDFgen.h */,
+				88C6490C16791E6B009487B4 /* PDFgen.m */,
 				649D1ECC1670677B00EAC40A /* Supporting Files */,
 			);
 			path = Storyboard;
@@ -225,6 +234,7 @@
 				64DEE39216787781001AD0DF /* TaskCompleted.m in Sources */,
 				64DEE39516787A74001AD0DF /* CertificateController.m in Sources */,
 				64DEE39B16787C78001AD0DF /* DidYouKnowController.m in Sources */,
+				88E5243F1679226800702CCB /* PDFgen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +269,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -272,8 +283,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -288,14 +301,17 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -305,10 +321,12 @@
 		649D1EE61670677B00EAC40A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Storyboard/Storyboard-Prefix.pch";
 				INFOPLIST_FILE = "Storyboard/Storyboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -316,10 +334,12 @@
 		649D1EE71670677B00EAC40A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Storyboard/Storyboard-Prefix.pch";
 				INFOPLIST_FILE = "Storyboard/Storyboard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

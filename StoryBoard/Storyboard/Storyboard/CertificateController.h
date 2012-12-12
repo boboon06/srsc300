@@ -9,5 +9,5 @@
 #import "TaskController.h"
 
 @interface CertificateController : UIViewController
-
+@property (nonatomic, retain) IBOutlet UIImageView *certview;
 @end

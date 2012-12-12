@@ -13,6 +13,7 @@
 @end
 
 @implementation CertificateController
+@synthesize certview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSString *home = NSHomeDirectory();
+    NSString *imagepath = [home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"];
+    UIImage *imagedata = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagepath]];
+    CGFloat scale = certview.frame.size.width/imagedata.size.width;
+    [certview setImage:[UIImage imageWithCGImage:[imagedata CGImage] scale: scale orientation:UIImageOrientationUp ]];
 }
 
 - (void)didReceiveMemoryWarning

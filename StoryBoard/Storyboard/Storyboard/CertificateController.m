@@ -82,7 +82,7 @@
     // Attach ALL the things!
     NSString *home = NSHomeDirectory();
     attach([home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"], @"application/pdf", [@"Joshua Holland" stringByAppendingString:@"'s Diploma.pdf"], picker);
-    attach([home stringByAppendingString:@"/Documents/Screen Shot 2012-11-30 at 1.33.38 PM.png"], @"image/png", [@"Joshua Holland" stringByAppendingString:@" Role Model.png"], picker);
+    attach([home stringByAppendingString:@"/Documents/Role_model.png"], @"image/png", [@"Joshua Holland" stringByAppendingString:@" Role Model.png"], picker);
     
     
     // Fill out the email body text
@@ -131,7 +131,14 @@ void popup(NSString* title, NSString* body)
 void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewController *picker)
 {
     NSData *myData = [NSData dataWithContentsOfFile:path];
+    if (myData.length > 0)
+    {
     [picker addAttachmentData:myData mimeType:MIME fileName:name];
+    }
+    else
+    {
+        NSLog(@"Failed to attach %@. REASON: 0 Bytes loaded.", path);
+    }
 }
 
 #pragma mark Facebook Intergration

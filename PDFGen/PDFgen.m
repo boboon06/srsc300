@@ -12,7 +12,7 @@
 @synthesize headeroffset;
 @synthesize pagesize;
 
-- (NSString*)createPDF:(NSString*)name pet:(NSString*)text age:(NSString*)age
+- (NSString*)createPDF:(NSObject*)values
 {
     NSLog(@"PDF TEXT: %@", text);
     NSString *home = NSHomeDirectory();
@@ -56,7 +56,7 @@
     return pdfFile;
 }
 
-- (NSString*)createJPG:(NSString*)name pet:(NSString*)text age:(NSString*)age
+- (NSString*)createJPG:(NSObject*)values
 {
     pagesize =  CGRectMake(0,0,792,612);
     NSString *home = NSHomeDirectory();

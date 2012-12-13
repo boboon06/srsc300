@@ -79,7 +79,7 @@
     NSArray *traits = [@"Curiosity, Fearlessness, Intelligence" componentsSeparatedByString:@","];
     NSString *traits_out = @"";
     int trait_count = 0;
-    while (trait_count < traits.count)
+    while (trait_count < traits.count) 
     {
         traits_out = [traits_out stringByAppendingFormat:@" * %@\r\n", [[NSString stringWithString:traits[trait_count]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         trait_count++;

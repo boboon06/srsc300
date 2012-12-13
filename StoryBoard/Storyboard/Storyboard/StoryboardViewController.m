@@ -7,6 +7,7 @@
 //
 
 #import "StoryboardViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface StoryboardViewController ()
 
@@ -24,6 +25,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)playIntro {
+    NSString *move_path =[[NSBundle mainBundle] pathForResource:@"intro" ofType:@"m4v"];
+    // Creating the player and playing the video
+    NSURL *url = [NSURL fileURLWithPath:move_path];
+    
+    MPMoviePlayerViewController *moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+    [self presentMoviePlayerViewControllerAnimated:moviePlayer];
 }
 
 @end

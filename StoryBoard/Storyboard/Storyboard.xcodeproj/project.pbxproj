@@ -34,6 +34,10 @@
 		88E5244B16792EEE00702CCB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244A16792EEE00702CCB /* libsqlite3.dylib */; };
 		88E5244D16792EFE00702CCB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244C16792EFE00702CCB /* FacebookSDK.framework */; };
 		88E5244F1679301800702CCB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244E1679301800702CCB /* AdSupport.framework */; };
+		D9C75BAB16797378008373F9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C75BAA16797378008373F9 /* MediaPlayer.framework */; };
+		D9C75BAD1679737C008373F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C75BAC1679737B008373F9 /* AVFoundation.framework */; };
+		D9C75BAF16797384008373F9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C75BAE16797384008373F9 /* MobileCoreServices.framework */; };
+		D9C75BB01679745F008373F9 /* intro.m4v in Resources */ = {isa = PBXBuildFile; fileRef = D9C75BA916797293008373F9 /* intro.m4v */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,10 @@
 		88E5244A16792EEE00702CCB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		88E5244C16792EFE00702CCB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = /Volumes/Scratch/facebookSDK/build/FacebookSDK.framework; sourceTree = "<absolute>"; };
 		88E5244E1679301800702CCB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D9C75BA916797293008373F9 /* intro.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.m4v; sourceTree = "<group>"; };
+		D9C75BAA16797378008373F9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D9C75BAC1679737B008373F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D9C75BAE16797384008373F9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C75BAF16797384008373F9 /* MobileCoreServices.framework in Frameworks */,
+				D9C75BAD1679737C008373F9 /* AVFoundation.framework in Frameworks */,
+				D9C75BAB16797378008373F9 /* MediaPlayer.framework in Frameworks */,
 				88E5244F1679301800702CCB /* AdSupport.framework in Frameworks */,
 				88E5244D16792EFE00702CCB /* FacebookSDK.framework in Frameworks */,
 				88E5244B16792EEE00702CCB /* libsqlite3.dylib in Frameworks */,
@@ -121,6 +132,9 @@
 		649D1EC41670677B00EAC40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9C75BAE16797384008373F9 /* MobileCoreServices.framework */,
+				D9C75BAC1679737B008373F9 /* AVFoundation.framework */,
+				D9C75BAA16797378008373F9 /* MediaPlayer.framework */,
 				88E5244E1679301800702CCB /* AdSupport.framework */,
 				88E5244C16792EFE00702CCB /* FacebookSDK.framework */,
 				88E5244A16792EEE00702CCB /* libsqlite3.dylib */,
@@ -169,6 +183,7 @@
 		649D1ECC1670677B00EAC40A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9C75BA916797293008373F9 /* intro.m4v */,
 				649D1ECD1670677B00EAC40A /* Storyboard-Info.plist */,
 				649D1ECE1670677B00EAC40A /* InfoPlist.strings */,
 				649D1ED11670677B00EAC40A /* main.m */,
@@ -232,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C75BB01679745F008373F9 /* intro.m4v in Resources */,
 				649D1ED01670677B00EAC40A /* InfoPlist.strings in Resources */,
 				649D1ED81670677B00EAC40A /* Default.png in Resources */,
 				649D1EDA1670677B00EAC40A /* Default@2x.png in Resources */,

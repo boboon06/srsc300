@@ -76,10 +76,10 @@
     NSString *text = @"$(PDF USER Text)"; // values.text?
     NSString *name = @"$(PDF USER Name)"; // values.name?
     NSString *age = @"$(PDF USER Age)"; // values.age?;
-    NSArray *traits = [@"Curiosity, The Element Of Loyalty., Fearlessness, Intelligence" componentsSeparatedByString:@","];
+    NSArray *traits = [@"Curiosity, Fearlessness, Intelligence" componentsSeparatedByString:@","];
     NSString *traits_out = @"";
     int trait_count = 0;
-    while (trait_count < sizeof(traits))
+    while (trait_count < traits.count)
     {
         traits_out = [traits_out stringByAppendingFormat:@" * %@\r\n", [[NSString stringWithString:traits[trait_count]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         trait_count++;

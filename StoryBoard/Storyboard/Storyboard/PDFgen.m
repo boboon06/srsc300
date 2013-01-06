@@ -18,7 +18,6 @@
     NSString *home = NSHomeDirectory();
     NSString *pdfFile = [home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"];
     NSLog(@"PDF PATH: %@", pdfFile);
-    pagesize =  CGRectMake(0,0,792,612);
     // Prepare the text using a Core Text Framesetter.
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)[text copy], NULL);
     if (currentText) {
@@ -58,7 +57,6 @@
 
 - (NSString*)createJPG:(NSObject*)values
 {
-    pagesize =  CGRectMake(0,0,792,612);
     NSString *home = NSHomeDirectory();
     NSString *jpgpath = [home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"]; // Figure out the Path to the JPG
     NSLog(@"IMAGE PATH: %@", jpgpath); // Just incase I get some random issue with sending images to Facebook etc.
@@ -76,6 +74,7 @@
     NSString *text = @"$(PDF USER Text)"; // values.text?
     NSString *name = @"$(PDF USER Name)"; // values.name?
     NSString *age = @"$(PDF USER Age)"; // values.age?;
+    NSString *loc = @"$(PDF USER Country)"; // values.location?;
     NSArray *traits = [@"Curiosity, Fearlessness, Intelligence" componentsSeparatedByString:@","];
     NSString *traits_out = @"";
     int trait_count = 0;
@@ -91,7 +90,7 @@
     [self drawBorder:visible width:4 offset:20]; // Draw the border. with a pre defined width and margin.
     [self drawHeader:visible]; // Draw the header.
     CGSize last; // Initilise a container to hold the last item's height (For dynamic reflow).
-    last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in Not Breaking it!", age, @"Manehattan, EQ"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width]; // Draw the short spiel.
+    last = [self drawText:[name stringByAppendingFormat:@" (%@) from %@ has completed a course in Not Breaking it!", age, loc] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:0 width:visible.size.width]; // Draw the short spiel.
     CGSize title = [self drawText:[name stringByAppendingString:@":"] font:[UIFont fontWithName:@"Papyrus" size:16.0] x:0 y:last.height + 10 width:visible.size.width]; // Draw the name with a trailing :
     [self drawText:@"Admires:\n" font:[UIFont systemFontOfSize:14.0] x:0 y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the Admires title.
     [self drawImage:[home stringByAppendingString:@"/Documents/role_model.jpg"] x:0 y:2*title.height + last.height width:(visible.size.width/3)-10]; // Draw the image/possible text. [206 pt wide. Drawn Width Fit.]
@@ -127,7 +126,7 @@
     CGContextRef    currentContext = UIGraphicsGetCurrentContext(); // Get the context.
     CGContextSetStrokeColorWithColor(currentContext, borderColor.CGColor); // Set up the stroke.
     CGContextSetLineWidth(currentContext, width); // Set up the width of the border.
-    CGContextStrokeRect(currentContext, draw); // Draw that motherfucker!
+    CGContextStrokeRect(currentContext, draw); // Draw that ****!
 }
 
 - (CGSize) drawText:(NSString*)textToDraw font:(UIFont*)font x:(int)x y:(int)y width:(int)width
@@ -185,6 +184,11 @@
     {
         exit(EXIT_FAILURE); // If an Critical error has occoured. Close it when the user clicks "Ok"
     }
+}
+-(void)setpagesize:(CGRect)_pagesize
+{
+    NSLog(@"PDFgen PAGE SIZE SET AS [%f X %f] with ORIGIN: (%f, %f)", _pagesize.size.width, _pagesize.size.height, _pagesize.origin.x, _pagesize.origin.y);
+    pagesize = _pagesize;
 }
 
 @end

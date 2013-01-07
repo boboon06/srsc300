@@ -59,7 +59,7 @@
 {
     NSString *home = NSHomeDirectory();
     NSString *jpgpath = [home stringByAppendingString:@"/Documents/pdf_gen_out.jpg"]; // Figure out the Path to the JPG
-    NSLog(@"IMAGE PATH: %@", jpgpath); // Just incase I get some random issue with sending images to Facebook etc.
+    NSLog(@"IMAGE PATH: %@", jpgpath); // Just in case I get some random issue with sending images to Facebook etc.
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(pagesize.size.width, pagesize.size.height), NO, 2.0); // Begin the drawing.
     [self drawContent:values]; // Use the exact same drawing tools as the PDF uses. Nifty that.
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext(); // Place it into a UIImage.

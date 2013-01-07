@@ -37,6 +37,7 @@
     temp = nil;
     //Setting it up so that a n amount of traits can be selected
     maxSelectedTraits = 3;
+    [self updateTraitDisplay];
 }
 
 - (void)didReceiveMemoryWarning

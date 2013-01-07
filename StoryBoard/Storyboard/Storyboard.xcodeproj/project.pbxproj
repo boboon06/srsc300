@@ -35,6 +35,7 @@
 		88E5244B16792EEE00702CCB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244A16792EEE00702CCB /* libsqlite3.dylib */; };
 		88E5244D16792EFE00702CCB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244C16792EFE00702CCB /* FacebookSDK.framework */; };
 		88E5244F1679301800702CCB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244E1679301800702CCB /* AdSupport.framework */; };
+		D9085E74167A70CF00BC6EFB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9085E73167A70CF00BC6EFB /* CoreMedia.framework */; };
 		D9C75BAB16797378008373F9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C75BAA16797378008373F9 /* MediaPlayer.framework */; };
 		D9C75BAD1679737C008373F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C75BAC1679737B008373F9 /* AVFoundation.framework */; };
 		D9C75BAF16797384008373F9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C75BAE16797384008373F9 /* MobileCoreServices.framework */; };
@@ -84,6 +85,9 @@
 		88E5244A16792EEE00702CCB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		88E5244C16792EFE00702CCB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = /Volumes/Scratch/facebookSDK/build/FacebookSDK.framework; sourceTree = "<absolute>"; };
 		88E5244E1679301800702CCB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D9085E6E167A6DEE00BC6EFB /* cameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cameraController.h; sourceTree = "<group>"; };
+		D9085E6F167A6DEE00BC6EFB /* cameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cameraController.m; sourceTree = "<group>"; };
+		D9085E73167A70CF00BC6EFB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		D9C75BA916797293008373F9 /* intro.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.m4v; sourceTree = "<group>"; };
 		D9C75BAA16797378008373F9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D9C75BAC1679737B008373F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -95,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				882C917C169A224800427F58 /* CoreData.framework in Frameworks */,
+				D9085E74167A70CF00BC6EFB /* CoreMedia.framework in Frameworks */,
 				D9C75BAF16797384008373F9 /* MobileCoreServices.framework in Frameworks */,
 				D9C75BAD1679737C008373F9 /* AVFoundation.framework in Frameworks */,
 				D9C75BAB16797378008373F9 /* MediaPlayer.framework in Frameworks */,
@@ -118,6 +122,7 @@
 		649D1EB61670677B00EAC40A = {
 			isa = PBXGroup;
 			children = (
+				D9085E73167A70CF00BC6EFB /* CoreMedia.framework */,
 				649D1ECB1670677B00EAC40A /* Storyboard */,
 				649D1EC41670677B00EAC40A /* Frameworks */,
 				649D1EC21670677B00EAC40A /* Products */,
@@ -161,6 +166,8 @@
 				649D1EDD1670677B00EAC40A /* MainStoryboard.storyboard */,
 				64DEE39916787C78001AD0DF /* DidYouKnowController.h */,
 				64DEE39A16787C78001AD0DF /* DidYouKnowController.m */,
+				D9085E6E167A6DEE00BC6EFB /* cameraController.h */,
+				D9085E6F167A6DEE00BC6EFB /* cameraController.m */,
 				64DEE39316787A73001AD0DF /* CertificateController.h */,
 				64DEE39416787A74001AD0DF /* CertificateController.m */,
 				64DEE39016787780001AD0DF /* TaskCompleted.h */,

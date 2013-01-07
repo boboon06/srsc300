@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DidYouKnowController : UIViewController
-
+@property (nonatomic, strong) NSArray *facts;
+@property (nonatomic, strong) IBOutlet UILabel *factText;
 @end

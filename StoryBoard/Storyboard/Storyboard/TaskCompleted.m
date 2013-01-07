@@ -27,6 +27,7 @@
 - (IBAction)gencert:(id)sender
 {
     id gen = [PDFgen new];
+    [gen setpagesize:CGRectMake(0,0,792,612)]; // Size of a A4 page
     [gen createPDF:nil];
     [gen createJPG:nil];
 }

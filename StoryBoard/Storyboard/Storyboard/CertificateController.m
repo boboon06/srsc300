@@ -163,7 +163,7 @@ void attach(NSString* path, NSString* MIME, NSString* name, MFMailComposeViewCon
                                                                                        otherButtonTitles:nil];
                                                  [alert show];
                                              } else if (FB_ISSESSIONOPENWITHSTATE(status)) {
-                                                 [self fbpush]; // I'm in! Begin Operation PSYCOPS.
+                                                 [self fbpush]; // I'm in! Begin Operation PSYCOP.
                                              }
                                          }];
     }

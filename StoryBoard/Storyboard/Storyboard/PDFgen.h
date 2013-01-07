@@ -13,6 +13,9 @@
 
 
 @interface PDFgen : NSObject
+{
+    CGRect pagesize;
+}
 @property (nonatomic) int headeroffset;
 @property (nonatomic) CGRect pagesize;
 
@@ -22,7 +25,7 @@
 - (CGSize) drawText:(NSString*)textToDraw font:(UIFont*)font x:(int)x y:(int)y width:(int)width;
 - (CGRect) drawImage:(NSString*)path x:(int)x y:(int)y width:(int)width;
 - (void) drawTimestamp;
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 -(void) drawContent:(NSObject*)values;
 - (NSString*)createJPG:(NSObject*)values;
+- (void)setpagesize:(CGRect)_pagesize;
 @end

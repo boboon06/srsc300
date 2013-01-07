@@ -26,6 +26,7 @@
 		64DEE39216787781001AD0DF /* TaskCompleted.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DEE39116787781001AD0DF /* TaskCompleted.m */; };
 		64DEE39516787A74001AD0DF /* CertificateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DEE39416787A74001AD0DF /* CertificateController.m */; };
 		64DEE39B16787C78001AD0DF /* DidYouKnowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DEE39A16787C78001AD0DF /* DidYouKnowController.m */; };
+		882C917C169A224800427F58 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 882C917B169A224800427F58 /* CoreData.framework */; };
 		88E524391679206D00702CCB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E524381679206D00702CCB /* CoreText.framework */; };
 		88E5243F1679226800702CCB /* PDFgen.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C6490C16791E6B009487B4 /* PDFgen.m */; };
 		88E5244516792C3600702CCB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E5244416792C3600702CCB /* MessageUI.framework */; };
@@ -74,6 +75,7 @@
 		64DEE39416787A74001AD0DF /* CertificateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificateController.m; sourceTree = "<group>"; };
 		64DEE39916787C78001AD0DF /* DidYouKnowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DidYouKnowController.h; sourceTree = "<group>"; };
 		64DEE39A16787C78001AD0DF /* DidYouKnowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DidYouKnowController.m; sourceTree = "<group>"; };
+		882C917B169A224800427F58 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		88C6490B16791E6B009487B4 /* PDFgen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFgen.h; sourceTree = "<group>"; };
 		88C6490C16791E6B009487B4 /* PDFgen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFgen.m; sourceTree = "<group>"; };
 		88E524381679206D00702CCB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,7 @@
 		649D1EC41670677B00EAC40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				882C917B169A224800427F58 /* CoreData.framework */,
 				D9C75BAE16797384008373F9 /* MobileCoreServices.framework */,
 				D9C75BAC1679737B008373F9 /* AVFoundation.framework */,
 				D9C75BAA16797378008373F9 /* MediaPlayer.framework */,

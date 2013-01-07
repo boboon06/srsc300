@@ -16,7 +16,7 @@
 {
     NSString *text = @"$(PDF Text)"; // values.text?;
     NSString *home = NSHomeDirectory();
-    NSString *pdfFile = [home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"];
+    NSString *pdfFile = [home stringByAppendingString:@"/Documents/pdf_gen_out.pdf"]; // Tada! Over writity!
     NSLog(@"PDF PATH: %@", pdfFile);
     // Prepare the text using a Core Text Framesetter.
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)[text copy], NULL);
@@ -103,7 +103,7 @@
 - (void) drawHeader:(CGRect)pageSize
 {
     CGContextRef currentContext = UIGraphicsGetCurrentContext(); // Get context.
-    CGContextSetRGBFillColor(currentContext, 0, 0, 0, 1.0);
+    CGContextSetRGBFillColor(currentContext, 0, 0, 0, 1.0); // Black, 0% Transparent.
     
     NSString *textToDraw = @"Diploma"; // For easy change to the string.
     
@@ -178,17 +178,10 @@
     [stamp drawInRect:renderingRect withFont:[UIFont systemFontOfSize:8.0] lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentLeft]; // Draw it!
     NSLog(@"DREW TIMESTAMP: X:%f Y:%f Width:%f Height:%f", pagesize.size.width-stringSize.width-30, pagesize.size.height-stringSize.height-5, stringSize.width, stringSize.height); // Log it.
 }
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0)
-    {
-        exit(EXIT_FAILURE); // If an Critical error has occoured. Close it when the user clicks "Ok"
-    }
-}
 -(void)setpagesize:(CGRect)_pagesize
 {
-    NSLog(@"PDFgen PAGE SIZE SET AS [%f X %f] with ORIGIN: (%f, %f)", _pagesize.size.width, _pagesize.size.height, _pagesize.origin.x, _pagesize.origin.y);
-    pagesize = _pagesize;
+    NSLog(@"PDFgen PAGE SIZE SET AS [%f X %f] with ORIGIN: (%f, %f)", _pagesize.size.width, _pagesize.size.height, _pagesize.origin.x, _pagesize.origin.y); // Log it.
+    pagesize = _pagesize; // Set the page size to the wanted page size.
 }
 
 @end

@@ -8,6 +8,9 @@
 
 #import "TaskController.h"
 
-@interface TaskOne : TaskController
-
+@interface TaskOne : TaskController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    IBOutlet UIImageView *avatarImageView;
+}
+-(IBAction)takePicture:(id)sender;
+@property (nonatomic,strong) NSString *pictureID;
 @end

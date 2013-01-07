@@ -28,7 +28,7 @@
 
 @implementation cameraController
 
-- (IBAction)startCameraVideo:(id)sender {
+- (void)startCameraVideo:(id)sender {
     // Getting the sender
     UIButton* btnRecord = (UIButton*) sender;
     NSString* ID =[NSString stringWithFormat:@"%d",btnRecord.tag];
@@ -48,6 +48,7 @@
     [self startCameraPictureControllerFromViewController:self usingDelegate:self];
 }
 
+ 
 - (IBAction)changeThumbnail:(id)sender {
     UIButton *button = (UIButton*) sender;
     [_selectedThumbnail setImage:[button imageForState:UIControlStateNormal] forState:UIControlStateNormal];
@@ -66,6 +67,7 @@
     }
 }
 
+    //Starting a camera for video capture
 - (BOOL) startCameraVideoControllerFromViewController: (UIViewController*) controller usingDelegate: (id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
     if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO) || (delegate == nil) || (controller == nil)) {
         return NO;
@@ -86,6 +88,7 @@
     return YES;
 }
 
+    //Starting the camera for picture taking
 - (BOOL) startCameraPictureControllerFromViewController: (UIViewController*) controller usingDelegate: (id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate{
     // Checking if the device has a camera or not
     if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO) || (delegate == nil) || (controller == nil)) {
@@ -185,7 +188,8 @@
         [self removeFile:imageName :@"jpeg"];
         
         //Creating the image
-        [self saveImage:imageToSave :imageName];    }
+        [self saveImage:imageToSave :imageName];
+    }
     
     [self dismissViewControllerAnimated: YES completion:nil];
 }

@@ -97,7 +97,6 @@
     [self drawText:[@"Respects:\r\n" stringByAppendingString:traits_out] font:[UIFont systemFontOfSize:14.0] x:(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the traits that the user respects.
     [self drawText:[@"And is going to:\n" stringByAppendingString:text] font:[UIFont systemFontOfSize:14.0] x:2*(visible.size.width/3) y:title.height+last.height width:(visible.size.width/3)-10]; // Draw the user's spiel.
     [self drawTimestamp]; // Draw a small Generated Timestamp (Bottom Right).
-
 }
 
 - (void) drawHeader:(CGRect)pageSize
@@ -146,7 +145,6 @@
     [textToDraw drawInRect:renderingRect withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentLeft]; // Draw it!
     NSLog(@"DREW TEXT: X:%d Y:%d Width:%f Height:%f", x, y, stringSize.width, stringSize.height); // Log it.
     return stringSize; // Return it's size so I can do accurate drawing.
-    
 }
 
 - (CGRect) drawImage:(NSString*)path x:(int)x y:(int)y width:(int)width
@@ -178,10 +176,10 @@
     [stamp drawInRect:renderingRect withFont:[UIFont systemFontOfSize:8.0] lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentLeft]; // Draw it!
     NSLog(@"DREW TIMESTAMP: X:%f Y:%f Width:%f Height:%f", pagesize.size.width-stringSize.width-30, pagesize.size.height-stringSize.height-5, stringSize.width, stringSize.height); // Log it.
 }
+
 -(void)setpagesize:(CGRect)_pagesize
 {
     NSLog(@"PDFgen PAGE SIZE SET AS [%f X %f] with ORIGIN: (%f, %f)", _pagesize.size.width, _pagesize.size.height, _pagesize.origin.x, _pagesize.origin.y); // Log it.
     pagesize = _pagesize; // Set the page size to the wanted page size.
 }
-
 @end

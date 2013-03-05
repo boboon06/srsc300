@@ -27,7 +27,20 @@
 - (void)cancelButtonAction:(id)sender {
     NSLog(@"Cancel Pressed");
     // TODO: Find out if this is actually a nicer way of signifiying a cancel
+    [self setDefaults];
     [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+/**
+ * Restore the stuff to it's default state, for the cancel button
+ */
+- (void)setDefaults {
+    NSLog(@"setting defaults");
+}
+
+-(IBAction)returned:(UIStoryboardSegue *)segue {
+    NSLog(@"Unwind Pressed");
+    // TODO: Find out if this is actually a nicer way of signifiying a cancel
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		644DFB1416DAC21200B01F90 /* Landscape@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 644DFB1316DAC21200B01F90 /* Landscape@2x.jpg */; };
+		644FC90F16D56B1500420456 /* StaticInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 644FC90E16D56B1500420456 /* StaticInfo.m */; };
+		646C97D816B0967300A15F71 /* Landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646C97D716B0967300A15F71 /* Landscape.jpg */; };
+		6478DA9B16E57FA800419B77 /* button_one.png in Resources */ = {isa = PBXBuildFile; fileRef = 6478DA9A16E57FA800419B77 /* button_one.png */; };
 		649D1EC61670677B00EAC40A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649D1EC51670677B00EAC40A /* UIKit.framework */; };
 		649D1EC81670677B00EAC40A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649D1EC71670677B00EAC40A /* Foundation.framework */; };
 		649D1ECA1670677B00EAC40A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649D1EC91670677B00EAC40A /* CoreGraphics.framework */; };
@@ -42,6 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		644DFB1316DAC21200B01F90 /* Landscape@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Landscape@2x.jpg"; sourceTree = "<group>"; };
+		644FC90D16D56B1500420456 /* StaticInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticInfo.h; sourceTree = "<group>"; };
+		644FC90E16D56B1500420456 /* StaticInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticInfo.m; sourceTree = "<group>"; };
+		646C97D716B0967300A15F71 /* Landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Landscape.jpg; sourceTree = "<group>"; };
+		6478DA9A16E57FA800419B77 /* button_one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_one.png; sourceTree = "<group>"; };
 		649D1EC11670677B00EAC40A /* Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649D1EC51670677B00EAC40A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		649D1EC71670677B00EAC40A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +172,8 @@
 				649D1ED41670677B00EAC40A /* StoryboardAppDelegate.h */,
 				649D1ED51670677B00EAC40A /* StoryboardAppDelegate.m */,
 				649D1EDD1670677B00EAC40A /* MainStoryboard.storyboard */,
+				644FC90D16D56B1500420456 /* StaticInfo.h */,
+				644FC90E16D56B1500420456 /* StaticInfo.m */,
 				64DEE39916787C78001AD0DF /* DidYouKnowController.h */,
 				64DEE39A16787C78001AD0DF /* DidYouKnowController.m */,
 				D9085E6E167A6DEE00BC6EFB /* cameraController.h */,
@@ -193,6 +204,9 @@
 		649D1ECC1670677B00EAC40A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6478DA9A16E57FA800419B77 /* button_one.png */,
+				646C97D716B0967300A15F71 /* Landscape.jpg */,
+				644DFB1316DAC21200B01F90 /* Landscape@2x.jpg */,
 				D9C75BA916797293008373F9 /* intro.m4v */,
 				649D1ECD1670677B00EAC40A /* Storyboard-Info.plist */,
 				649D1ECE1670677B00EAC40A /* InfoPlist.strings */,
@@ -263,6 +277,9 @@
 				649D1EDA1670677B00EAC40A /* Default@2x.png in Resources */,
 				649D1EDC1670677B00EAC40A /* Default-568h@2x.png in Resources */,
 				649D1EDF1670677B00EAC40A /* MainStoryboard.storyboard in Resources */,
+				646C97D816B0967300A15F71 /* Landscape.jpg in Resources */,
+				644DFB1416DAC21200B01F90 /* Landscape@2x.jpg in Resources */,
+				6478DA9B16E57FA800419B77 /* button_one.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +302,7 @@
 				64DEE39516787A74001AD0DF /* CertificateController.m in Sources */,
 				64DEE39B16787C78001AD0DF /* DidYouKnowController.m in Sources */,
 				88E5243F1679226800702CCB /* PDFgen.m in Sources */,
+				644FC90F16D56B1500420456 /* StaticInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

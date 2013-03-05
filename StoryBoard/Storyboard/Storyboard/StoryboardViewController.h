@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StaticInfo.h"
 
-@interface StoryboardViewController : UIViewController <UINavigationControllerDelegate>
+@interface StoryboardViewController : UIViewController <UINavigationControllerDelegate> {
+    NSTimer *aTimer;
+}
 
 -(void)introfinished;
+-(void)exitFullScreened;
+-(UIImage*)imageWithImage;
 @end
